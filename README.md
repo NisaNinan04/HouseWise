@@ -1,3 +1,3 @@
-# housewise
-smart purchase tracker and forecasting
+# HOUSEWISE
+A smart purchase tracker and forecasting
 "# HouseWise" 

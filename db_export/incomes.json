@@ -1,0 +1,3524 @@
+[
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b0",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-06-27",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b1",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-07-12",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b2",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-07-27",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b3",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-08-11",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b4",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-08-26",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa78b5",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-09-10",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d513f610b91c3183055d59"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a8f",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-06-27",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a90",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-07-12",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a91",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-07-27",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a92",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-08-11",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a93",
+    "description": "Monthly Salary",
+    "amount": 75000.0,
+    "date": "2025-08-26",
+    "category": "income",
+    "subcategory": "salary",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51a4c5fb5ded7cafa7a94",
+    "description": "Freelance Work",
+    "amount": 15000.0,
+    "date": "2025-09-10",
+    "category": "income",
+    "subcategory": "freelance",
+    "user_id": "68d516b77703846145a38119"
+  },
+  {
+    "_id": "68d51bb7ce49d4ed644f7f8b",
+    "user_id": "68d513f610b91c3183055d59",
+    "source": "Freelance",
+    "amount": 2000.0,
+    "date": "2025-09-25",
+    "created_at": "2025-09-25T10:38:47.540000"
+  },
+  {
+    "_id": "68d51bd6ce49d4ed644f7f8c",
+    "user_id": "68d513f610b91c3183055d59",
+    "source": null,
+    "amount": 4569.0,
+    "date": "2025-09-25",
+    "created_at": "2025-09-25T10:39:18.184000"
+  },
+  {
+    "_id": "68d51f11ce49d4ed644f7faa",
+    "user_id": "68d513f610b91c3183055d59",
+    "source": "Business",
+    "amount": 6000.0,
+    "date": "2025-09-25",
+    "created_at": "2025-09-25T10:53:05.860000"
+  },
+  {
+    "_id": "68d5286808a14a0a5c15d733",
+    "user_id": "68d513f610b91c3183055d59",
+    "source": "Freelance",
+    "amount": 2000.0,
+    "date": "2025-09-25",
+    "created_at": "2025-09-25T11:32:56.699000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f47",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 14172.89,
+    "date": "2025-11-05",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-11-05T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f48",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 17737.02,
+    "date": "2025-09-09",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-09T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f49",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 10876.44,
+    "date": "2025-10-19",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-19T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4a",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 5445.12,
+    "date": "2025-10-04",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-04T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4b",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 40163.83,
+    "date": "2025-08-28",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-28T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4c",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 30160.76,
+    "date": "2025-09-27",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-27T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4d",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 7740.17,
+    "date": "2025-08-20",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-20T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4e",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 5103.32,
+    "date": "2025-08-29",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f4f",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 20104.06,
+    "date": "2025-09-26",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-26T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f50",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 17158.53,
+    "date": "2025-10-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-24T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f51",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 34190.4,
+    "date": "2025-09-12",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-12T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f52",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 43615.04,
+    "date": "2025-10-11",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-11T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f53",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 18392.07,
+    "date": "2025-09-09",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-09T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f54",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 37553.0,
+    "date": "2025-09-27",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-27T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f55",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 19452.97,
+    "date": "2025-10-04",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-04T22:35:44.828000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9a",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 9812.51,
+    "date": "2025-10-27",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-27T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9b",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 57064.74,
+    "date": "2025-08-25",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-25T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9c",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 18827.27,
+    "date": "2025-10-06",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-06T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9d",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 57064.74,
+    "date": "2025-10-10",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-10T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9e",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 2015.48,
+    "date": "2025-10-26",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-26T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f9f",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 9187.1,
+    "date": "2025-10-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-26T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa0",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 11273.83,
+    "date": "2025-11-01",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-11-01T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa1",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 9649.79,
+    "date": "2025-08-24",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-24T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa2",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 12312.88,
+    "date": "2025-10-06",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-06T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa3",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 19042.6,
+    "date": "2025-09-03",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-03T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa4",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 57064.74,
+    "date": "2025-10-23",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-23T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa5",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 42254.45,
+    "date": "2025-09-23",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-23T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa6",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 14763.88,
+    "date": "2025-08-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-26T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa7",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 13178.39,
+    "date": "2025-11-04",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-11-04T22:35:44.896000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fea",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 37203.58,
+    "date": "2025-10-31",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-31T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530feb",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 26348.98,
+    "date": "2025-08-17",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-17T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fec",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 43183.48,
+    "date": "2025-08-30",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-30T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fed",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 17041.35,
+    "date": "2025-09-22",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-22T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fee",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 21812.34,
+    "date": "2025-09-18",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-18T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fef",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 39518.44,
+    "date": "2025-11-04",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-11-04T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff0",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 1168.25,
+    "date": "2025-08-22",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-22T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff1",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 9607.42,
+    "date": "2025-08-16",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-16T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff2",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 22326.81,
+    "date": "2025-09-07",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-07T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff3",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 37203.58,
+    "date": "2025-08-18",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-18T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff4",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 33822.4,
+    "date": "2025-10-15",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-15T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff5",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 12308.16,
+    "date": "2025-09-18",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-18T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff6",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 41264.78,
+    "date": "2025-09-01",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-01T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff7",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 16173.3,
+    "date": "2025-08-29",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:44.912000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531033",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 40511.75,
+    "date": "2025-09-20",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-20T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531034",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 37216.89,
+    "date": "2025-08-16",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-16T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531035",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 27705.87,
+    "date": "2025-09-18",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-18T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531036",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 46740.14,
+    "date": "2025-11-01",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-11-01T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531037",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 91740.18,
+    "date": "2025-10-12",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-12T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531038",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 16798.39,
+    "date": "2025-08-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-26T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531039",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 37621.05,
+    "date": "2025-08-16",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-16T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103a",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 21342.16,
+    "date": "2025-09-22",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-22T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103b",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 12051.69,
+    "date": "2025-10-16",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-16T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103c",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 48729.25,
+    "date": "2025-10-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-25T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103d",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 31652.67,
+    "date": "2025-09-29",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-29T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103e",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 34040.25,
+    "date": "2025-08-29",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53103f",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 18998.56,
+    "date": "2025-10-17",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-17T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531040",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 40493.23,
+    "date": "2025-09-17",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-17T22:35:44.937000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531041",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 5699.99,
+    "date": "2025-08-18",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-18T22:35:44.937000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7e5",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 90610.3,
+    "date": "2025-10-30",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-30T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7e6",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 25899.87,
+    "date": "2025-09-29",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-29T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7e7",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 31055.31,
+    "date": "2025-09-30",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-30T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7e8",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 6352.52,
+    "date": "2025-10-15",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-15T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7e9",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 19134.28,
+    "date": "2025-08-18",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-18T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ea",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 31416.9,
+    "date": "2025-10-14",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-14T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7eb",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 19197.04,
+    "date": "2025-10-03",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-03T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ec",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 11939.36,
+    "date": "2025-10-04",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-04T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ed",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 31230.9,
+    "date": "2025-09-08",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-08T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ee",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 18138.25,
+    "date": "2025-10-15",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-15T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ef",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 25511.52,
+    "date": "2025-10-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-26T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f0",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 48736.24,
+    "date": "2025-10-08",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-08T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f1",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 6739.7,
+    "date": "2025-09-28",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-28T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f2",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 1141.22,
+    "date": "2025-10-17",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-17T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f3",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 17556.23,
+    "date": "2025-08-20",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-20T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f4",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 26127.07,
+    "date": "2025-09-23",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-23T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f5",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 90610.3,
+    "date": "2025-08-17",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-17T22:35:56.892000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b83b",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 71107.89,
+    "date": "2025-10-05",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-05T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b83c",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 2963.06,
+    "date": "2025-08-28",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-28T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b83d",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 71107.89,
+    "date": "2025-10-15",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-15T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b83e",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 39304.02,
+    "date": "2025-09-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-25T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b83f",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 38995.9,
+    "date": "2025-10-15",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-15T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b840",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 41475.21,
+    "date": "2025-09-21",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-21T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b841",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 27361.96,
+    "date": "2025-11-03",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-11-03T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b842",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 1030.24,
+    "date": "2025-08-20",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-20T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b843",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 36680.81,
+    "date": "2025-08-15",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-15T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b844",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 26059.4,
+    "date": "2025-09-21",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-21T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b845",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 3231.65,
+    "date": "2025-08-16",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-16T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b846",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 49117.74,
+    "date": "2025-09-07",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-07T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b847",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 71107.89,
+    "date": "2025-10-20",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-20T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b848",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 48035.41,
+    "date": "2025-10-01",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-01T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b849",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 36835.43,
+    "date": "2025-09-05",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-05T22:35:56.909000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b891",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 12849.64,
+    "date": "2025-09-12",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-12T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b892",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 10710.21,
+    "date": "2025-09-30",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-30T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b893",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 41829.07,
+    "date": "2025-11-02",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-11-02T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b894",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 65638.15,
+    "date": "2025-10-16",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-16T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b895",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 65638.15,
+    "date": "2025-10-09",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-09T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b896",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 13313.09,
+    "date": "2025-09-19",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-19T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b897",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 9431.83,
+    "date": "2025-10-07",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-07T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b898",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 2494.68,
+    "date": "2025-09-17",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-17T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b899",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 31490.82,
+    "date": "2025-09-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-24T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89a",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 3372.13,
+    "date": "2025-10-09",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-09T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89b",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 1184.02,
+    "date": "2025-10-27",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-27T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89c",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 19936.9,
+    "date": "2025-09-14",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-14T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89d",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 2501.21,
+    "date": "2025-10-08",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-08T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89e",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 9578.34,
+    "date": "2025-10-30",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-30T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b89f",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 48625.59,
+    "date": "2025-10-08",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-08T22:35:56.922000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8de",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 22108.9,
+    "date": "2025-10-01",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-01T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8df",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 46593.28,
+    "date": "2025-08-20",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-20T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e0",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 5263.61,
+    "date": "2025-08-30",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-30T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e1",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 5354.36,
+    "date": "2025-10-25",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-25T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e2",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 5369.97,
+    "date": "2025-09-09",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-09T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e3",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 25242.04,
+    "date": "2025-09-22",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-22T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e4",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 18014.44,
+    "date": "2025-10-08",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-08T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e5",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 46593.28,
+    "date": "2025-09-24",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-24T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 38639.56,
+    "date": "2025-10-29",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-29T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e7",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 18306.5,
+    "date": "2025-11-05",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-11-05T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e8",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 16758.82,
+    "date": "2025-09-23",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-23T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8e9",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 42852.16,
+    "date": "2025-10-21",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-21T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8ea",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 46593.28,
+    "date": "2025-10-11",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-11T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8eb",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 40191.57,
+    "date": "2025-09-21",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-21T22:35:56.938000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 17254.96,
+    "date": "2025-10-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-26T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 42619.29,
+    "date": "2025-09-18",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-18T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 13460.53,
+    "date": "2025-08-22",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-22T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 14215.44,
+    "date": "2025-10-08",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-08T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 8382.87,
+    "date": "2025-08-29",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b93f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 15788.68,
+    "date": "2025-08-15",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-15T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b940",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 13232.11,
+    "date": "2025-11-01",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-11-01T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b941",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 39830.33,
+    "date": "2025-09-17",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-17T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b942",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 32718.29,
+    "date": "2025-10-03",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-03T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b943",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 21562.71,
+    "date": "2025-10-04",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-04T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b944",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 15954.85,
+    "date": "2025-08-29",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b945",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 1495.27,
+    "date": "2025-08-30",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-30T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b946",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 17684.81,
+    "date": "2025-08-29",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-29T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b947",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 55114.03,
+    "date": "2025-10-13",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-13T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b948",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 49849.29,
+    "date": "2025-10-27",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-27T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b949",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 55114.03,
+    "date": "2025-08-27",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-27T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 26897.15,
+    "date": "2025-08-16",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-16T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 55114.03,
+    "date": "2025-08-17",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-17T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 17384.58,
+    "date": "2025-09-15",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-15T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 8039.24,
+    "date": "2025-08-28",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-28T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 44179.13,
+    "date": "2025-09-05",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-05T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b94f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 28178.3,
+    "date": "2025-09-30",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-30T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b950",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 36849.67,
+    "date": "2025-10-07",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-07T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b951",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 8933.67,
+    "date": "2025-10-20",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-20T22:35:56.954000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9a9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 38981.06,
+    "date": "2025-10-19",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-19T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9aa",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 50695.1,
+    "date": "2025-09-10",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-10T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ab",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 27732.58,
+    "date": "2025-10-27",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-27T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ac",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 10641.49,
+    "date": "2025-10-27",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-27T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ad",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 30227.32,
+    "date": "2025-10-19",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-19T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ae",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 29312.87,
+    "date": "2025-09-10",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-10T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9af",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 50695.1,
+    "date": "2025-10-23",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-23T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b0",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 17904.63,
+    "date": "2025-09-08",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-08T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b1",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 5072.29,
+    "date": "2025-08-22",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-22T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b2",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 16793.89,
+    "date": "2025-10-30",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-30T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b3",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 6036.05,
+    "date": "2025-09-12",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-12T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b4",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 18539.26,
+    "date": "2025-09-18",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-18T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b5",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 37663.19,
+    "date": "2025-09-24",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-24T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b6",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 2036.12,
+    "date": "2025-09-07",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-07T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b7",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 37282.07,
+    "date": "2025-09-12",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-12T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b8",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 27664.77,
+    "date": "2025-09-20",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-20T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9b9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 10686.41,
+    "date": "2025-10-20",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-20T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ba",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 30110.31,
+    "date": "2025-09-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-25T22:35:56.968000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9bb",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 50695.1,
+    "date": "2025-09-05",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-05T22:35:56.968000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c3",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 37969.71,
+    "date": "2025-08-28",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-28T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c4",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 15078.33,
+    "date": "2025-09-21",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-21T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c5",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 6911.44,
+    "date": "2025-09-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-24T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c6",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 46516.74,
+    "date": "2025-09-28",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-28T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c7",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 46516.74,
+    "date": "2025-08-24",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-24T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c8",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 13240.96,
+    "date": "2025-09-10",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-10T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085c9",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 1852.73,
+    "date": "2025-08-24",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-24T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085ca",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 26250.97,
+    "date": "2025-09-23",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-23T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085cb",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 45771.49,
+    "date": "2025-09-24",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-24T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085cc",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 35773.2,
+    "date": "2025-09-04",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-04T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085cd",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 35855.56,
+    "date": "2025-09-16",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-16T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085ce",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 1559.0,
+    "date": "2025-09-08",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-08T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085cf",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 23939.79,
+    "date": "2025-09-30",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-30T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d0",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 40205.39,
+    "date": "2025-10-29",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-29T22:38:43.263000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08613",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 21194.62,
+    "date": "2025-09-01",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-01T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08614",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 16490.51,
+    "date": "2025-10-22",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-22T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08615",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 33909.06,
+    "date": "2025-10-05",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-05T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08616",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 47060.16,
+    "date": "2025-10-03",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-03T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08617",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 47487.84,
+    "date": "2025-10-29",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-29T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08618",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 11698.39,
+    "date": "2025-10-10",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-10T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08619",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 28273.06,
+    "date": "2025-10-03",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-03T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861a",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 33312.59,
+    "date": "2025-09-13",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-13T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861b",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 4525.39,
+    "date": "2025-08-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-26T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861c",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 10588.37,
+    "date": "2025-08-22",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-22T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861d",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 19718.04,
+    "date": "2025-09-02",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-02T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861e",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 44521.36,
+    "date": "2025-09-02",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-02T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0861f",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 25816.43,
+    "date": "2025-10-01",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-01T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08620",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 16612.87,
+    "date": "2025-09-06",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-06T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08621",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 17708.23,
+    "date": "2025-09-17",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-17T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08622",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 42011.71,
+    "date": "2025-09-14",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-14T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08623",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 5437.79,
+    "date": "2025-09-11",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-11T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08624",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 44521.36,
+    "date": "2025-09-21",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-21T22:38:43.287000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08661",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 11140.76,
+    "date": "2025-08-14",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-14T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08662",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 38594.48,
+    "date": "2025-09-05",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-05T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08663",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 38594.48,
+    "date": "2025-09-11",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-11T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08664",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 40817.28,
+    "date": "2025-10-03",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-03T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08665",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 45910.24,
+    "date": "2025-10-16",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-16T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08666",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 28718.54,
+    "date": "2025-08-22",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-22T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08667",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 37570.86,
+    "date": "2025-10-21",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-21T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08668",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 23599.16,
+    "date": "2025-09-15",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-15T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08669",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 29895.85,
+    "date": "2025-08-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-26T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866a",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 23161.58,
+    "date": "2025-10-07",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-07T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866b",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 21374.67,
+    "date": "2025-11-01",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-11-01T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866c",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 38594.48,
+    "date": "2025-09-16",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-16T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866d",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 27710.6,
+    "date": "2025-08-23",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-23T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866e",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 38594.48,
+    "date": "2025-09-12",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-12T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0866f",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 11052.51,
+    "date": "2025-09-04",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-04T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08670",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 4707.02,
+    "date": "2025-09-06",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-06T22:38:43.306000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086ae",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 15521.9,
+    "date": "2025-09-06",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-06T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086af",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 33124.58,
+    "date": "2025-09-17",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-17T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b0",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 17948.57,
+    "date": "2025-08-26",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-26T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b1",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 3337.06,
+    "date": "2025-10-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-25T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b2",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 38349.56,
+    "date": "2025-10-05",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-05T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b3",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 32739.8,
+    "date": "2025-09-17",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-17T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b4",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 12315.99,
+    "date": "2025-08-25",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-25T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b5",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 1407.35,
+    "date": "2025-10-01",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-01T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 38457.79,
+    "date": "2025-08-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-26T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b7",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 45966.07,
+    "date": "2025-08-28",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-28T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b8",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 27144.73,
+    "date": "2025-09-22",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-22T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086b9",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 30720.87,
+    "date": "2025-10-31",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-31T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086ba",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 19597.4,
+    "date": "2025-08-28",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-28T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086bb",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 31641.66,
+    "date": "2025-08-15",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-15T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086bc",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 39006.81,
+    "date": "2025-09-26",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-26T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086bd",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 11048.14,
+    "date": "2025-09-15",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-15T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086be",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 25927.64,
+    "date": "2025-10-21",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-21T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086bf",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 63720.74,
+    "date": "2025-09-06",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-06T22:38:43.326000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08715",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 11692.18,
+    "date": "2025-10-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-24T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08716",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 7518.46,
+    "date": "2025-08-25",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-25T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08717",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 41459.43,
+    "date": "2025-11-01",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-11-01T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08718",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 12985.27,
+    "date": "2025-10-18",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-18T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08719",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 16895.06,
+    "date": "2025-10-20",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-20T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 41459.43,
+    "date": "2025-10-22",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-22T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 30221.28,
+    "date": "2025-08-21",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-21T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 20468.34,
+    "date": "2025-09-13",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-13T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 27052.98,
+    "date": "2025-09-15",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-15T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 24374.24,
+    "date": "2025-08-25",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-25T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0871f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 6672.78,
+    "date": "2025-10-27",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-27T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08720",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 38490.63,
+    "date": "2025-11-02",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-11-02T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08721",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 32003.68,
+    "date": "2025-09-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-24T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08722",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 41459.43,
+    "date": "2025-09-10",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-10T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08723",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 6002.28,
+    "date": "2025-10-19",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-19T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08724",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 1973.46,
+    "date": "2025-08-28",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-28T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08725",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 44710.41,
+    "date": "2025-08-18",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-18T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08726",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 38878.6,
+    "date": "2025-09-03",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-03T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08727",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 7248.25,
+    "date": "2025-10-19",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-19T22:38:43.347000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878a",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 11850.15,
+    "date": "2025-10-15",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-15T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878b",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 10724.26,
+    "date": "2025-08-18",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-18T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878c",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 46283.69,
+    "date": "2025-10-07",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-07T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878d",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 28186.12,
+    "date": "2025-09-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-26T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878e",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 48448.93,
+    "date": "2025-09-03",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-03T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0878f",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 4315.2,
+    "date": "2025-11-03",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-11-03T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08790",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 21097.74,
+    "date": "2025-10-18",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-18T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08791",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 29770.1,
+    "date": "2025-09-08",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-08T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08792",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 18355.57,
+    "date": "2025-10-31",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-31T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08793",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 30669.52,
+    "date": "2025-10-16",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-16T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08794",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 30039.61,
+    "date": "2025-09-23",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-23T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08795",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 16735.54,
+    "date": "2025-09-07",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-07T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08796",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 2684.11,
+    "date": "2025-10-16",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-16T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08797",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 77655.39,
+    "date": "2025-10-14",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-14T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08798",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 13366.36,
+    "date": "2025-10-02",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-02T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08799",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 7260.26,
+    "date": "2025-10-13",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-13T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879a",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 27174.23,
+    "date": "2025-10-21",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-21T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879b",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 41938.73,
+    "date": "2025-10-02",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-02T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879c",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 43990.77,
+    "date": "2025-10-13",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-13T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879d",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 77655.39,
+    "date": "2025-11-03",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-11-03T22:38:43.370000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879e",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 2215.85,
+    "date": "2025-08-23",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-23T22:38:43.370000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adf5",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 64843.87,
+    "date": "2025-08-22",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-22T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adf6",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 27205.48,
+    "date": "2025-09-05",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-05T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adf7",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 40786.02,
+    "date": "2025-10-24",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-24T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adf8",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 47335.94,
+    "date": "2025-09-16",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-16T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adf9",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 12440.99,
+    "date": "2025-09-26",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-26T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adfa",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 18129.27,
+    "date": "2025-10-17",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-17T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adfb",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 31943.21,
+    "date": "2025-10-21",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-21T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adfc",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 27680.39,
+    "date": "2025-08-17",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-17T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adfd",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 23652.69,
+    "date": "2025-11-04",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-11-04T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adfe",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 10699.46,
+    "date": "2025-09-21",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-21T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9adff",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 38370.85,
+    "date": "2025-09-26",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-26T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae00",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 64843.87,
+    "date": "2025-09-13",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-13T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae01",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 41802.24,
+    "date": "2025-10-11",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-11T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae02",
+    "user_id": "68d513f610b91c3183055d59",
+    "amount": 1880.55,
+    "date": "2025-10-30",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-30T22:41:44.357000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae40",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 15302.19,
+    "date": "2025-08-28",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-28T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae41",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 26755.45,
+    "date": "2025-09-29",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-29T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae42",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 18025.41,
+    "date": "2025-10-30",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-30T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae43",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 29948.4,
+    "date": "2025-09-22",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-22T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae44",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 4025.92,
+    "date": "2025-08-20",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-20T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae45",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 13754.96,
+    "date": "2025-10-15",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-15T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae46",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 19454.34,
+    "date": "2025-10-29",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-29T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae47",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 35080.69,
+    "date": "2025-09-21",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-21T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae48",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 36309.02,
+    "date": "2025-11-04",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-11-04T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae49",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 46672.52,
+    "date": "2025-08-28",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-28T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4a",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 31314.91,
+    "date": "2025-10-25",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-25T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4b",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 20156.08,
+    "date": "2025-10-14",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-14T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4c",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 20134.21,
+    "date": "2025-09-22",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-22T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4d",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 17052.1,
+    "date": "2025-08-26",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-26T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4e",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 26499.35,
+    "date": "2025-10-13",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-13T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae4f",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 36309.02,
+    "date": "2025-10-17",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-17T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae50",
+    "user_id": "68d516b77703846145a38119",
+    "amount": 15285.3,
+    "date": "2025-10-06",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-06T22:41:44.379000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae8d",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 16801.86,
+    "date": "2025-08-18",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-18T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae8e",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-10-16",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-16T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae8f",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 18547.75,
+    "date": "2025-09-06",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-06T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae90",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-08-18",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-18T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae91",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 43080.5,
+    "date": "2025-08-24",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-24T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae92",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-11-05",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-11-05T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae93",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 5398.13,
+    "date": "2025-10-16",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-16T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae94",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 13345.9,
+    "date": "2025-09-29",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-29T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae95",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 31594.43,
+    "date": "2025-10-09",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-09T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae96",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 41028.38,
+    "date": "2025-10-21",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-21T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae97",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-08-24",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-24T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae98",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 1097.22,
+    "date": "2025-08-22",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-22T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae99",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-10-02",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-02T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9a",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 85826.43,
+    "date": "2025-08-27",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-27T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9b",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "amount": 26751.75,
+    "date": "2025-09-11",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-11T22:41:44.397000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aed6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 18984.85,
+    "date": "2025-09-30",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-30T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aed7",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 46681.38,
+    "date": "2025-10-01",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-01T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aed8",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 33686.27,
+    "date": "2025-09-07",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-07T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aed9",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 13289.49,
+    "date": "2025-08-19",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-19T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aeda",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 21493.33,
+    "date": "2025-09-01",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-01T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aedb",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 49981.0,
+    "date": "2025-10-21",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-21T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aedc",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 29525.65,
+    "date": "2025-08-16",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-16T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aedd",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 5830.12,
+    "date": "2025-10-31",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-31T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aede",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 47271.34,
+    "date": "2025-10-05",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-05T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aedf",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 32646.74,
+    "date": "2025-09-21",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-21T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee0",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 16918.2,
+    "date": "2025-08-21",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-21T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee1",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 41472.81,
+    "date": "2025-08-24",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-24T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee2",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 44663.91,
+    "date": "2025-08-19",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-19T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee3",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "amount": 2728.98,
+    "date": "2025-10-06",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-06T22:41:44.413000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af38",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 10998.66,
+    "date": "2025-08-16",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-16T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af39",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 31029.93,
+    "date": "2025-10-27",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-27T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 56395.34,
+    "date": "2025-10-21",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-21T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 1055.57,
+    "date": "2025-09-19",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-19T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 23462.53,
+    "date": "2025-10-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-26T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 14088.34,
+    "date": "2025-09-08",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-08T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 16399.59,
+    "date": "2025-09-03",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-03T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af3f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 9089.83,
+    "date": "2025-09-30",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-30T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af40",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 2772.66,
+    "date": "2025-08-19",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-19T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af41",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 3101.3,
+    "date": "2025-09-23",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-23T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af42",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 11348.44,
+    "date": "2025-09-05",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-05T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af43",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 13371.07,
+    "date": "2025-10-05",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-05T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af44",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 38836.73,
+    "date": "2025-11-01",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-11-01T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af45",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 44450.14,
+    "date": "2025-09-12",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-09-12T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af46",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 56395.34,
+    "date": "2025-10-11",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-11T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af47",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 4760.5,
+    "date": "2025-09-17",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-09-17T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af48",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 56395.34,
+    "date": "2025-10-05",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-10-05T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af49",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 56395.34,
+    "date": "2025-08-20",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-20T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 34639.32,
+    "date": "2025-08-24",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-08-24T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 22320.24,
+    "date": "2025-10-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-25T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 17409.87,
+    "date": "2025-10-18",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-18T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 36277.65,
+    "date": "2025-10-27",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-27T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 44739.06,
+    "date": "2025-10-20",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-20T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af4f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "amount": 56395.34,
+    "date": "2025-08-27",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-08-27T22:41:44.433000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afac",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 27801.84,
+    "date": "2025-08-14",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-08-14T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afad",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 15384.68,
+    "date": "2025-09-26",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-09-26T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afae",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 21169.41,
+    "date": "2025-10-17",
+    "source": "Freelance",
+    "category": "Income",
+    "created_at": "2025-10-17T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afaf",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 55623.45,
+    "date": "2025-09-14",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-14T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb0",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 10532.8,
+    "date": "2025-09-22",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-09-22T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb1",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 55623.45,
+    "date": "2025-09-28",
+    "source": "Salary",
+    "category": "Income",
+    "created_at": "2025-09-28T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb2",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 31712.47,
+    "date": "2025-10-16",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-10-16T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb3",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 26719.31,
+    "date": "2025-10-25",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-25T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb4",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 44120.69,
+    "date": "2025-10-20",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-10-20T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb5",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 19342.65,
+    "date": "2025-10-29",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-29T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb6",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 17482.75,
+    "date": "2025-08-29",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-29T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb7",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 33912.19,
+    "date": "2025-10-03",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-03T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb8",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 26401.0,
+    "date": "2025-08-19",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-19T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afb9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 36002.3,
+    "date": "2025-11-02",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-11-02T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afba",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 9065.94,
+    "date": "2025-08-20",
+    "source": "Investment",
+    "category": "Income",
+    "created_at": "2025-08-20T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afbb",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 33856.56,
+    "date": "2025-10-21",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-10-21T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afbc",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 13962.24,
+    "date": "2025-11-01",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-11-01T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afbd",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 39754.11,
+    "date": "2025-08-18",
+    "source": "Rent",
+    "category": "Income",
+    "created_at": "2025-08-18T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afbe",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 41589.8,
+    "date": "2025-08-25",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-08-25T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afbf",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 6052.75,
+    "date": "2025-09-12",
+    "source": "Other",
+    "category": "Income",
+    "created_at": "2025-09-12T22:41:44.451000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc0",
+    "user_id": "690cd57384454e60cb8404ad",
+    "amount": 27733.99,
+    "date": "2025-10-13",
+    "source": "Business",
+    "category": "Income",
+    "created_at": "2025-10-13T22:41:44.451000"
+  },
+  {
+    "_id": "690cd89728f9335c3631d6fd",
+    "user_id": "690cd57384454e60cb8404ad",
+    "source": "Rent",
+    "amount": 6789.0,
+    "date": "2025-11-06",
+    "created_at": "2025-11-06T17:19:19.335000"
+  },
+  {
+    "_id": "690cd89c28f9335c3631d6fe",
+    "user_id": "690cd57384454e60cb8404ad",
+    "source": "Salary",
+    "amount": 50695.1,
+    "date": "2025-11-01",
+    "created_at": "2025-11-06T17:19:24.078000",
+    "recurring_id": "690cd57480eb9cd6b043b9a8"
+  },
+  {
+    "_id": "690ce76f67e84665cf27f105",
+    "user_id": "690cd57384454e60cb8404ad",
+    "source": "Commission",
+    "amount": 5000.0,
+    "date": "2025-11-06",
+    "created_at": "2025-11-06T18:22:39.309000"
+  }
+]

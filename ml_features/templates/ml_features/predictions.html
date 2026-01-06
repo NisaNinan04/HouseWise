@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block title %}Expense Predictions - HouseWise{% endblock %}
+
+{% block content %}
+<div class="main-content" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+    <div style="margin-bottom: 2rem;">
+        <h1 style="font-size: 28px; font-weight: 700; color: #333; margin-bottom: 0.5rem;">📊 Expense Predictions</h1>
+        <p style="color: #666; font-size: 14px;">Your personalized spending forecast for the next 7 days</p>
+    </div>
+
+    {% if error %}
+    <div style="background: #fee; border: 1px solid #fcc; border-radius: 8px; padding: 1rem; margin-bottom: 2rem;">
+        <p style="color: #c33; margin: 0;">⚠️ {{ error }}</p>
+    </div>
+    {% endif %}
+
+    {% if predictions %}
+    <!-- Summary Card -->
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; color: white;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 0.5rem;">Total Predicted Spending</div>
+                <div style="font-size: 36px; font-weight: 700; margin-bottom: 0.25rem;">₹{{ "%.0f"|format(total_predicted) }}</div>
+                <div style="font-size: 13px; opacity: 0.8;">Next 7 days</div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 0.5rem;">Daily Average</div>
+                <div style="font-size: 24px; font-weight: 700;">₹{{ "%.0f"|format(avg_daily) }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Spending Alerts -->
+    <div style="margin-bottom: 2rem;">
+        <h2 style="font-size: 20px; font-weight: 600; color: #333; margin-bottom: 1rem;">⚠️ Categories Going Overboard</h2>
+        <div id="category-alerts-container" style="display: grid; gap: 1rem;">
+            <div style="text-align: center; padding: 2rem; color: #999;">
+                Loading category alerts...
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 12px;">
+        <p style="color: #666; margin-bottom: 1rem; font-size: 16px;">Not enough data for predictions yet.</p>
+        <p style="color: #999; font-size: 14px;">Add more expenses to get AI-powered predictions!</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+// Prediction Alert Management
+const predictionAlerts = {
+    get: function() {
+        const stored = localStorage.getItem('prediction_alerts');
+        return stored ? JSON.parse(stored) : [];
+    },
+    set: function(alerts) {
+        localStorage.setItem('prediction_alerts', JSON.stringify(alerts));
+    },
+    add: function(alert) {
+        const alerts = this.get();
+        // Check if alert already exists for this date
+        const existing = alerts.find(a => a.date === alert.date);
+        if (existing) {
+            // Update existing alert
+            Object.assign(existing, alert);
+        } else {
+            alerts.push(alert);
+        }
+        this.set(alerts);
+    },
+    remove: function(date) {
+        const alerts = this.get();
+        this.set(alerts.filter(a => a.date !== date));
+    }
+};
+
+function setPredictionAlert(date, predictedAmount, category) {
+    const alert = {
+        date: date,
+        predicted_amount: predictedAmount,
+        category: category,
+        set_at: new Date().toISOString(),
+        status: 'active'
+    };
+    
+    predictionAlerts.add(alert);
+    
+    // Show confirmation
+    const btn = event.target;
+    const originalText = btn.textContent;
+    btn.textContent = '✓ Alert Set!';
+    btn.style.background = '#10b981';
+    
+    setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '#667eea';
+    }, 2000);
+    
+    // Trigger dashboard update check
+    if (window.updateDashboardAlerts) {
+        window.updateDashboardAlerts();
+    }
+}
+
+// Category Alerts Management
+const categoryReminders = {
+    get: function() {
+        const stored = localStorage.getItem('category_reminders');
+        return stored ? JSON.parse(stored) : [];
+    },
+    set: function(reminders) {
+        localStorage.setItem('category_reminders', JSON.stringify(reminders));
+    },
+    add: function(reminder) {
+        const reminders = this.get();
+        const existing = reminders.find(r => r.category === reminder.category);
+        if (existing) {
+            Object.assign(existing, reminder);
+        } else {
+            reminders.push(reminder);
+        }
+        this.set(reminders);
+    },
+    remove: function(category) {
+        const reminders = this.get();
+        this.set(reminders.filter(r => r.category !== category));
+    }
+};
+
+function loadCategoryAlerts() {
+    fetch('/ml/api/category-alerts')
+        .then(res => res.json())
+        .then(data => {
+            const container = document.getElementById('category-alerts-container');
+            if (!container) return;
+            
+            if (!data.alerts || data.alerts.length === 0) {
+                container.innerHTML = '<div style="text-align: center; padding: 2rem; color: #999;">✅ All categories are within normal spending!</div>';
+                return;
+            }
+            
+            container.innerHTML = data.alerts.map(alert => {
+                const isReminderSet = categoryReminders.get().some(r => r.category === alert.category);
+                
+                return `
+                <div class="category-alert-card" data-category="${alert.category}" 
+                     style="background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px; padding: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 700; color: #333; font-size: 18px; margin-bottom: 0.5rem;">
+                                ⚠️ ${alert.category}
+                            </div>
+                            <div style="font-size: 14px; color: #666; margin-bottom: 0.75rem;">
+                                This category is ${alert.increase_pct}% above your normal spending
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 1rem;">
+                                <div style="padding: 0.75rem; background: white; border-radius: 6px;">
+                                    <div style="font-size: 11px; color: #999; margin-bottom: 0.25rem;">Normal</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #10b981;">₹${alert.normal_average.toFixed(0)}</div>
+                                </div>
+                                <div style="padding: 0.75rem; background: white; border-radius: 6px;">
+                                    <div style="font-size: 11px; color: #999; margin-bottom: 0.25rem;">Projected</div>
+                                    <div style="font-size: 16px; font-weight: 600; color: #ef4444;">₹${alert.projected_month.toFixed(0)}</div>
+                                </div>
+                            </div>
+                            <div style="padding: 0.75rem; background: #fee; border-radius: 6px; margin-bottom: 1rem;">
+                                <div style="font-size: 13px; color: #c33; font-weight: 600;">
+                                    Reduce by ₹${alert.reduce_by.toFixed(0)} to get back to normal
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="setCategoryReminder('${alert.category}', ${alert.normal_average}, ${alert.reduce_by}, event)" 
+                            class="set-reminder-btn"
+                            data-category="${alert.category}"
+                            style="width: 100%; padding: 0.75rem; background: ${isReminderSet ? '#10b981' : '#667eea'}; color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                        ${isReminderSet ? '✓ Reminder Active' : '🔔 Set Reminder'}
+                    </button>
+                </div>
+            `;
+            }).join('');
+        })
+        .catch(err => {
+            const container = document.getElementById('category-alerts-container');
+            if (container) {
+                container.innerHTML = '<div style="text-align: center; padding: 2rem; color: #ef4444;">Error loading alerts. Please refresh.</div>';
+            }
+        });
+}
+
+function setCategoryReminder(category, normalAmount, reduceBy, evt) {
+    const reminder = {
+        category: category,
+        normal_amount: normalAmount,
+        reduce_by: reduceBy,
+        set_at: new Date().toISOString(),
+        status: 'active'
+    };
+    
+    categoryReminders.add(reminder);
+    
+    // Update button - use passed event or find by data attribute
+    const btn = evt ? evt.target : document.querySelector(`[data-category="${category}"].set-reminder-btn`);
+    if (btn) {
+        btn.textContent = '✓ Reminder Active';
+        btn.style.background = '#10b981';
+    }
+    
+    // Reload alerts to update all button states
+    setTimeout(() => {
+        loadCategoryAlerts();
+    }, 100);
+    
+    // Trigger dashboard update
+    if (window.updateDashboardReminders) {
+        window.updateDashboardReminders();
+    }
+    
+    // Show success feedback
+    console.log('✅ Reminder set for', category);
+}
+
+// Load existing alerts and mark buttons
+document.addEventListener('DOMContentLoaded', function() {
+    // Load prediction alerts
+    const alerts = predictionAlerts.get();
+    alerts.forEach(alert => {
+        const card = document.querySelector(`[data-date="${alert.date}"]`);
+        if (card) {
+            const btn = card.querySelector('.set-alert-btn');
+            if (btn) {
+                btn.textContent = '✓ Alert Active';
+                btn.style.background = '#10b981';
+            }
+        }
+    });
+    
+    // Load category alerts
+    loadCategoryAlerts();
+    
+    // Refresh category alerts every 30 seconds
+    setInterval(loadCategoryAlerts, 30000);
+});
+</script>
+
+<style>
+.main-content {
+    animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.set-alert-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+</style>
+{% endblock %}

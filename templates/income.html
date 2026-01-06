@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise | Income</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateX(2px);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+
+        /* General Card and Grid Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-header th {
+            background: #e9ecef;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            font-size: 14px;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table-body-scroll {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .table-row {
+            border-bottom: 1px solid #e9ecef;
+            transition: background-color 0.2s;
+        }
+
+        .table-row:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table-row td {
+            padding: 12px;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .btn-secondary:hover {
+            background: #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <header style="margin-bottom: 30px;">
+                <h1 style="font-size: 28px; font-weight: 700; color: #333;">Income</h1>
+                <p style="color: #666; font-size: 14px; margin-top: 4px;">Track and manage your income sources.</p>
+            </header>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h2 class="card-title" style="text-align: center; margin-bottom: 20px;">Add One-Time Income</h2>
+                    <form method="POST" action="{{ url_for('income') }}" style="display: flex; flex-direction: column; gap: 16px;">
+                        <input type="hidden" name="form_kind" value="one_time">
+                        <div>
+                            <label for="source" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Income Source</label>
+                            <select name="source" id="source" class="form-input" required onchange="toggleCustomSource()">
+                                <option value="">Select Income Source</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Freelance">Freelance</option>
+                                <option value="Rent">Rent (Property)</option>
+                                <option value="Investment Returns">Investment Returns</option>
+                                <option value="Business">Business</option>
+                                <option value="Side Hustle">Side Hustle</option>
+                                <option value="Commission">Commission</option>
+                                <option value="Bonus">Bonus</option>
+                                <option value="Refund">Refund</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <input type="text" name="customSource" id="customSource" class="form-input" placeholder="Enter custom source" style="display:none; margin-top:8px;">
+                        </div>
+                        <div>
+                            <label for="amount" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Amount (₹)</label>
+                            <input type="number" name="amount" id="amount" step="0.01" placeholder="0.00" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="date" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Date</label>
+                            <input type="date" name="date" id="date" required class="form-input">
+                        </div>
+                        <button type="submit" class="btn submit-btn">Add Income</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title" style="text-align: center; margin-bottom: 20px;">Add Fixed Income</h2>
+                    <form method="POST" action="{{ url_for('income') }}" style="display: flex; flex-direction: column; gap: 16px;">
+                        <input type="hidden" name="form_kind" value="recurring">
+                        <div>
+                            <label for="rec_source" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Source</label>
+                            <select name="rec_source" id="rec_source" class="form-input" required>
+                                <option value="">Select</option>
+                                <option value="Salary">Salary</option>
+                                <option value="Rent">Rent (Property)</option>
+                                <option value="Pension">Pension</option>
+                                <option value="Stipend">Stipend</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="rec_amount" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Amount</label>
+                            <input type="number" name="rec_amount" id="rec_amount" step="0.01" placeholder="0.00" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="rec_frequency" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Frequency</label>
+                            <select name="rec_frequency" id="rec_frequency" class="form-input">
+                                <option value="monthly" selected>Monthly</option>
+                                <option value="weekly">Weekly</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="rec_start_date" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Start From</label>
+                            <input type="date" name="rec_start_date" id="rec_start_date" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="rec_day_of_month" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Day (for monthly)</label>
+                            <input type="number" name="rec_day_of_month" id="rec_day_of_month" min="1" max="28" placeholder="e.g., 1 for 1st" class="form-input">
+                        </div>
+                        <div>
+                            <label for="rec_end_date" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">End Date (optional)</label>
+                            <input type="date" name="rec_end_date" id="rec_end_date" class="form-input">
+                        </div>
+                        <button type="submit" class="btn submit-btn">Save Fixed Income</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card" style="grid-column: span 1;">
+                    <div class="card-header">
+                        <h2 class="card-title">Income Records</h2>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead class="table-header">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Source</th>
+                                    <th style="text-align: right;">Amount</th>
+                                    <th style="text-align: center;">Actions</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="table-body-scroll">
+                            <table>
+                                <tbody>
+                                    {% for entry in income_data %}
+                                    <tr class="table-row">
+                                        <td>{{ entry.date }}</td>
+                                        <td>{{ entry.source | capitalize }}</td>
+                                        <td style="text-align: right; color: #10b981; font-weight: 600;">₹{{ entry.amount }}</td>
+                                        <td style="text-align: center;">
+                                            <form method="POST" action="/delete-income/{{ entry._id }}" style="display: inline;">
+                                                <button type="submit" class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px; font-weight: 600;">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Fixed Incomes</h2>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        {% if recurring_defs %}
+                            {% for r in recurring_defs %}
+                            <div style="padding: 16px; background: #f8f9fa; border-radius: 8px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                    <div>
+                                        <div style="font-weight: 600; color: #333; margin-bottom: 4px;">{{ r.source }} {% if not r.active %}<span style="color:#ef4444; font-weight:600;">(Paused)</span>{% endif %}</div>
+                                        <div style="font-size: 12px; color: #666;">₹{{ '%.2f'|format(r.amount) }} • {{ r.frequency|capitalize }} • since {{ r.start_date }}</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 8px;">
+                                    <form method="POST" action="{{ url_for('post_recurring_income', rec_id=r._id_str) }}" style="display: inline;">
+                                        <button type="submit" class="btn btn-secondary" {% if posted_map.get(r._id_str) %}disabled style="opacity:0.6; cursor:not-allowed;"{% endif %}>{% if posted_map.get(r._id_str) %}Added This Month✓{% else %}Add This Month{% endif %}</button>
+                                    </form>
+                                    <form method="POST" action="{{ url_for('toggle_recurring_income', rec_id=r._id_str) }}" style="display: inline;">
+                                        <button type="submit" class="btn btn-secondary">{% if r.active %}Pause{% else %}Resume{% endif %}</button>
+                                    </form>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <div style="text-align: center; padding: 40px; color: #999; background: #f8f9fa; border-radius: 8px;">No fixed incomes yet.</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('date');
+            if (dateInput && !dateInput.value) {
+                dateInput.value = new Date().toISOString().split('T')[0];
+            }
+        });
+
+        function toggleCustomSource() {
+            const sourceSelect = document.getElementById('source');
+            const customInput = document.getElementById('customSource');
+            if (sourceSelect.value === 'Other') {
+                customInput.style.display = 'block';
+                customInput.required = true;
+            } else {
+                customInput.style.display = 'none';
+                customInput.required = false;
+            }
+        }
+
+        // Handle form submission for custom source
+        const oneTimeForm = document.querySelector('form input[name="form_kind"][value="one_time"]').closest('form');
+        if (oneTimeForm) {
+            oneTimeForm.addEventListener('submit', function(e) {
+            const sourceSelect = document.getElementById('source');
+            const customInput = document.getElementById('customSource');
+            if (sourceSelect.value === 'Other' && customInput.value.trim()) {
+                // Create a hidden input with the custom source value
+                const hiddenInput = document.createElement('input');
+                hiddenInput.type = 'hidden';
+                hiddenInput.name = 'source';
+                hiddenInput.value = customInput.value.trim();
+                e.target.appendChild(hiddenInput);
+                // Change the select to use the custom value
+                sourceSelect.value = customInput.value.trim();
+            }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,3460 @@
+[
+  {
+    "_id": "690cd5683a609b2a7a530f56",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Internet",
+    "amount": 1709.17,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f57",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 3683.75,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f58",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 4956.67,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f59",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 3412.19,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f5a",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Internet",
+    "amount": 1691.34,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f5b",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 4236.19,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f5c",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Gas",
+    "amount": 3083.03,
+    "due_date": "2025-11-10",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f5d",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 4729.71,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-31T17:05:44.836000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa8",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Loan EMI",
+    "amount": 3660.37,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-13T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fa9",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Cable TV",
+    "amount": 919.48,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530faa",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Electricity",
+    "amount": 2390.86,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-12T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fab",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Insurance",
+    "amount": 4018.0,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fac",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Internet",
+    "amount": 2021.18,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fad",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 3349.24,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-12T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fae",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Internet",
+    "amount": 1116.05,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530faf",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 1631.62,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fb0",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Rent",
+    "amount": 3378.26,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fb1",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Water",
+    "amount": 4631.59,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-28T17:05:44.901000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff8",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 4464.52,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-12T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ff9",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 1480.53,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-13T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ffa",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 2020.9,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ffb",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Phone",
+    "amount": 1743.78,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ffc",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 512.01,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ffd",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 4186.91,
+    "due_date": "2025-11-13",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530ffe",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Phone",
+    "amount": 2733.75,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530fff",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Cable TV",
+    "amount": 3845.23,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531000",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Loan EMI",
+    "amount": 3569.43,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531001",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Cable TV",
+    "amount": 2148.82,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531002",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Water",
+    "amount": 2353.62,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531003",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 4326.67,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:05:44.919000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531042",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 4229.47,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531043",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Gas",
+    "amount": 979.23,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531044",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Insurance",
+    "amount": 1983.2,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531045",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Loan EMI",
+    "amount": 1065.91,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531046",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Phone",
+    "amount": 3430.81,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531047",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Gas",
+    "amount": 3544.69,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531048",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Loan EMI",
+    "amount": 2938.19,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a531049",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 3008.6,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53104a",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Credit Card",
+    "amount": 4800.09,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:44.943000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a53104b",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 3663.67,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-13T17:05:44.943000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f6",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Internet",
+    "amount": 1494.95,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f7",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 4256.48,
+    "due_date": "2025-12-04",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f8",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 4596.09,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7f9",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 2660.46,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7fa",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 4067.55,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7fb",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 1245.73,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7fc",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 2337.89,
+    "due_date": "2025-11-27",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7fd",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 2362.65,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7fe",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 833.54,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-13T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b7ff",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 545.37,
+    "due_date": "2025-11-28",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-23T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b800",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Phone",
+    "amount": 4497.32,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.899000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84a",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Electricity",
+    "amount": 3330.92,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-12T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84b",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Electricity",
+    "amount": 4698.18,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84c",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 1943.21,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84d",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Electricity",
+    "amount": 1064.72,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84e",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Rent",
+    "amount": 2240.48,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b84f",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Cable TV",
+    "amount": 3927.79,
+    "due_date": "2025-11-13",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b850",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Electricity",
+    "amount": 3864.68,
+    "due_date": "2025-11-28",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b851",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 4084.55,
+    "due_date": "2025-11-27",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-15T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b852",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 4435.67,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b853",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Insurance",
+    "amount": 737.08,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:05:56.915000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a0",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 1539.6,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a1",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Loan EMI",
+    "amount": 3967.78,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a2",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 3409.32,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a3",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Loan EMI",
+    "amount": 2895.7,
+    "due_date": "2025-11-28",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a4",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 4557.59,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a5",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 1895.95,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a6",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Cable TV",
+    "amount": 4909.89,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a7",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 3222.75,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a8",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Gas",
+    "amount": 3325.41,
+    "due_date": "2025-11-10",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8a9",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 3672.22,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8aa",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 3084.64,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:05:56.928000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8ec",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Loan EMI",
+    "amount": 931.3,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8ed",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 551.63,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8ee",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 3803.2,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8ef",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 1973.71,
+    "due_date": "2025-12-04",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f0",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 2960.14,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f1",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 4853.72,
+    "due_date": "2025-11-24",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f2",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 4088.58,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f3",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Gas",
+    "amount": 1712.33,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f4",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Loan EMI",
+    "amount": 4801.26,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f5",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 3929.62,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b8f6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Rent",
+    "amount": 2905.25,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.944000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b952",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 4033.04,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b953",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 1218.38,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b954",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Gas",
+    "amount": 4290.22,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b955",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 3544.08,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b956",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 4785.59,
+    "due_date": "2025-11-27",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b957",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 4833.58,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b958",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 3546.87,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b959",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 1027.77,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 4807.34,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 517.15,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Phone",
+    "amount": 3667.21,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-05T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Insurance",
+    "amount": 3175.94,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Gas",
+    "amount": 3219.15,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b95f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 4129.47,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b960",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 4250.42,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b961",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Phone",
+    "amount": 2241.9,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:56.959000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9bc",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 3610.57,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9bd",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 4179.66,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9be",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Water",
+    "amount": 1440.44,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9bf",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Insurance",
+    "amount": 2675.93,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c0",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 1439.66,
+    "due_date": "2025-12-04",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c1",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Insurance",
+    "amount": 1587.34,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c2",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Electricity",
+    "amount": 1385.9,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c3",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Credit Card",
+    "amount": 2297.12,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c4",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Loan EMI",
+    "amount": 2244.39,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c5",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 3322.78,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c6",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Insurance",
+    "amount": 3803.86,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-31T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c7",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 4640.42,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c8",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Water",
+    "amount": 4288.81,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9c9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Credit Card",
+    "amount": 1687.45,
+    "due_date": "2025-11-28",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9ca",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Cable TV",
+    "amount": 2736.28,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9cb",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Water",
+    "amount": 3649.29,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:05:56.974000"
+  },
+  {
+    "_id": "690cd57480eb9cd6b043b9cc",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Credit Card",
+    "amount": 3008.35,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-28T17:05:56.974000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d1",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Gas",
+    "amount": 1718.79,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d2",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Phone",
+    "amount": 555.58,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d3",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 1757.44,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d4",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 4998.73,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d5",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 1009.44,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d6",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Phone",
+    "amount": 2112.77,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-05T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d7",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Cable TV",
+    "amount": 4584.25,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d8",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Gas",
+    "amount": 3594.59,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-15T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085d9",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 1445.86,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f085da",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Phone",
+    "amount": 2212.9,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:08:43.273000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08625",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 3015.65,
+    "due_date": "2025-12-04",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08626",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Credit Card",
+    "amount": 531.55,
+    "due_date": "2025-11-28",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08627",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 3793.46,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08628",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Credit Card",
+    "amount": 2202.05,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-15T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08629",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Water",
+    "amount": 1302.67,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0862a",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 1024.49,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0862b",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 4498.59,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-23T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0862c",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Gas",
+    "amount": 2580.1,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0862d",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Insurance",
+    "amount": 3314.17,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:08:43.294000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08671",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Electricity",
+    "amount": 3857.9,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08672",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 1793.35,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08673",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 2003.31,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08674",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Loan EMI",
+    "amount": 3549.84,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08675",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Internet",
+    "amount": 1769.92,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-12T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08676",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 1932.44,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08677",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Insurance",
+    "amount": 3328.83,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08678",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Insurance",
+    "amount": 1736.08,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08679",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Credit Card",
+    "amount": 2222.14,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0867a",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Phone",
+    "amount": 668.55,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:08:43.314000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c0",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 1450.56,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c1",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 2403.8,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-23T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c2",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Insurance",
+    "amount": 4175.53,
+    "due_date": "2025-11-10",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c3",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 4367.67,
+    "due_date": "2025-11-10",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c4",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 4410.63,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-25T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c5",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 2109.26,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 2518.45,
+    "due_date": "2025-12-01",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c7",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Credit Card",
+    "amount": 2949.59,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-27T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f086c8",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Credit Card",
+    "amount": 2313.81,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.334000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08728",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Gas",
+    "amount": 3480.96,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08729",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Water",
+    "amount": 2687.31,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-28T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Insurance",
+    "amount": 2558.82,
+    "due_date": "2025-11-13",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 4241.36,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 1059.41,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Gas",
+    "amount": 2027.48,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-05T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 3589.18,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0872f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Internet",
+    "amount": 2463.54,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08730",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Gas",
+    "amount": 2419.69,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-25T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08731",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 3504.92,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08732",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Cable TV",
+    "amount": 3084.5,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-25T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08733",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Internet",
+    "amount": 4273.6,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08734",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Internet",
+    "amount": 659.7,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f08735",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Water",
+    "amount": 1931.04,
+    "due_date": "2025-12-01",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:08:43.359000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f0879f",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Internet",
+    "amount": 696.9,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a0",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Cable TV",
+    "amount": 4931.8,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a1",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 4089.11,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a2",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 3311.26,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a3",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Insurance",
+    "amount": 4734.75,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a4",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Loan EMI",
+    "amount": 2355.4,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a5",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Phone",
+    "amount": 3590.58,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-05T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a6",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 3890.67,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a7",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Insurance",
+    "amount": 624.94,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-31T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a8",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Loan EMI",
+    "amount": 3092.97,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087a9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Electricity",
+    "amount": 2857.71,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:08:43.400000"
+  },
+  {
+    "_id": "690cd61b6deb72b751f087aa",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 4482.39,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:08:43.400000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae03",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 2267.58,
+    "due_date": "2025-11-24",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae04",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Insurance",
+    "amount": 4887.11,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae05",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 3873.66,
+    "due_date": "2025-11-18",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae06",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 1065.09,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-23T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae07",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Phone",
+    "amount": 4809.15,
+    "due_date": "2025-12-01",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-23T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae08",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Credit Card",
+    "amount": 2319.77,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae09",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Rent",
+    "amount": 4086.51,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae0a",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 4717.27,
+    "due_date": "2025-11-27",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae0b",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 4197.88,
+    "due_date": "2025-12-01",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae0c",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Loan EMI",
+    "amount": 4205.83,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae0d",
+    "user_id": "68d513f610b91c3183055d59",
+    "user_email": "john@example.com",
+    "name": "Water",
+    "amount": 1512.3,
+    "due_date": "2025-11-13",
+    "recipients": [
+      "john@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-15T17:11:44.366000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae51",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Cable TV",
+    "amount": 3776.41,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae52",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Cable TV",
+    "amount": 2399.59,
+    "due_date": "2025-11-27",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae53",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Internet",
+    "amount": 1483.24,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-29T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae54",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Internet",
+    "amount": 2001.42,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae55",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Water",
+    "amount": 2573.22,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae56",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Loan EMI",
+    "amount": 2056.8,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae57",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Internet",
+    "amount": 2376.51,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae58",
+    "user_id": "68d516b77703846145a38119",
+    "user_email": "test@example.com",
+    "name": "Credit Card",
+    "amount": 2006.24,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "test@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:11:44.387000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9c",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Water",
+    "amount": 3226.73,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9d",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 4091.99,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-28T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9e",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Rent",
+    "amount": 518.73,
+    "due_date": "2025-11-26",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9ae9f",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Cable TV",
+    "amount": 573.9,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aea0",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Water",
+    "amount": 3502.56,
+    "due_date": "2025-12-02",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-14T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aea1",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Cable TV",
+    "amount": 3222.06,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aea2",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Loan EMI",
+    "amount": 4948.74,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aea3",
+    "user_id": "690cd5683a609b2a7a530f16",
+    "user_email": "rajesh.kumar@example.com",
+    "name": "Credit Card",
+    "amount": 709.05,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "rajesh.kumar@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-13T17:11:44.404000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee4",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Insurance",
+    "amount": 1499.31,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee5",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 1139.46,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-24T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee6",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Credit Card",
+    "amount": 3734.4,
+    "due_date": "2025-11-21",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-25T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee7",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Phone",
+    "amount": 4424.25,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-01T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee8",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Cable TV",
+    "amount": 4361.83,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-05T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aee9",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Internet",
+    "amount": 3945.5,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aeea",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Electricity",
+    "amount": 778.85,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aeeb",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Phone",
+    "amount": 3351.39,
+    "due_date": "2025-11-19",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9aeec",
+    "user_id": "690cd5683a609b2a7a530f17",
+    "user_email": "priya.sharma@example.com",
+    "name": "Water",
+    "amount": 913.17,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "priya.sharma@example.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:11:44.419000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af50",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Internet",
+    "amount": 1378.43,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af51",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Credit Card",
+    "amount": 1466.74,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af52",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Internet",
+    "amount": 1622.9,
+    "due_date": "2025-11-30",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af53",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Cable TV",
+    "amount": 4116.77,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af54",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 3039.93,
+    "due_date": "2025-12-01",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af55",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 1848.2,
+    "due_date": "2025-11-12",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-10T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af56",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Water",
+    "amount": 1933.59,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-17T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af57",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Rent",
+    "amount": 2327.73,
+    "due_date": "2025-11-11",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af58",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 4338.2,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-02T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af59",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Loan EMI",
+    "amount": 3607.16,
+    "due_date": "2025-12-06",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5a",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Credit Card",
+    "amount": 1072.2,
+    "due_date": "2025-11-25",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5b",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Credit Card",
+    "amount": 4995.07,
+    "due_date": "2025-12-05",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-08T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5c",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Credit Card",
+    "amount": 1437.21,
+    "due_date": "2025-11-10",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-09T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5d",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Credit Card",
+    "amount": 3411.32,
+    "due_date": "2025-11-14",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-26T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5e",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 4303.73,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9af5f",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_email": "a@gmail.com",
+    "name": "Electricity",
+    "amount": 3747.92,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "a@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:11:44.439000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc1",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Credit Card",
+    "amount": 3552.1,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-11T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc2",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Cable TV",
+    "amount": 4409.62,
+    "due_date": "2025-11-22",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-22T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc3",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Internet",
+    "amount": 3727.0,
+    "due_date": "2025-11-29",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-16T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc4",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Credit Card",
+    "amount": 3690.79,
+    "due_date": "2025-11-23",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-07T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc5",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Electricity",
+    "amount": 1475.14,
+    "due_date": "2025-12-03",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc6",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Loan EMI",
+    "amount": 619.08,
+    "due_date": "2025-11-20",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc7",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Cable TV",
+    "amount": 1808.0,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-21T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc8",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Electricity",
+    "amount": 2225.03,
+    "due_date": "2025-11-08",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-20T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afc9",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 3667.04,
+    "due_date": "2025-11-17",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-19T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afca",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 686.3,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-30T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afcb",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Rent",
+    "amount": 3395.04,
+    "due_date": "2025-11-09",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-18T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afcc",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Electricity",
+    "amount": 3123.7,
+    "due_date": "2025-11-16",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-03T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afcd",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Loan EMI",
+    "amount": 2419.28,
+    "due_date": "2025-11-07",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-11-04T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afce",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Phone",
+    "amount": 2622.66,
+    "due_date": "2025-11-15",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": false,
+    "broadcast": false,
+    "created_at": "2025-10-15T17:11:44.459000"
+  },
+  {
+    "_id": "690cd6d0bdd26b13c7e9afcf",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_email": "s@gmail.com",
+    "name": "Gas",
+    "amount": 1060.84,
+    "due_date": "2025-11-13",
+    "recipients": [
+      "s@gmail.com"
+    ],
+    "repeat_monthly": true,
+    "broadcast": false,
+    "created_at": "2025-10-31T17:11:44.459000"
+  }
+]

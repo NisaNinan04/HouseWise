@@ -1,0 +1,19 @@
+{
+  "default_category": "Expense",
+  "default_subcategory": "Uncategorized",
+  "income_keywords": ["salary", "stipend", "reimbursement", "bonus", "refund"],
+  "rules": [
+    { "keywords": ["swiggy", "zomato", "ubereats", "food", "restaurant", "cafe", "dining"], "category": "Expense", "subcategory": "Food & Dining" },
+    { "keywords": ["netflix", "spotify", "prime"], "category": "Expense", "subcategory": "Subscriptions" },
+    { "keywords": ["amazon", "flipkart"], "category": "Expense", "subcategory": "Shopping" },
+    { "keywords": ["bigbasket", "dmart", "grocer", "grocery"], "category": "Expense", "subcategory": "Groceries" },
+    { "keywords": ["uber", "ola", "rapido"], "category": "Expense", "subcategory": "Transport" },
+    { "keywords": ["electricity", "water bill", "wifi", "broadband", "gas"], "category": "Expense", "subcategory": "Bills" },
+    { "keywords": ["mutual fund", "mf", "sip", "stocks", "nifty", "zerodha"], "category": "Investment", "subcategory": "Investment" },
+    { "keywords": ["tax", "tds", "gst"], "category": "Taxes", "subcategory": "Taxes" },
+    { "keywords": ["rent", "landlord"], "category": "Expense", "subcategory": "Rent" },
+    { "keywords": ["medical", "pharmacy", "hospital"], "category": "Expense", "subcategory": "Medicine" }
+  ]
+}
+
+

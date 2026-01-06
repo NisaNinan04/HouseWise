@@ -1,0 +1,18 @@
+{
+  "export_date": "2025-11-07T00:11:54.193664",
+  "database_name": "sem5",
+  "collections_exported": [
+    "users",
+    "purchases",
+    "incomes",
+    "incomes_recurring",
+    "bills",
+    "medical",
+    "savings_goals",
+    "settings",
+    "group_expenses",
+    "groups",
+    "user_sessions"
+  ],
+  "total_documents": 3100
+}

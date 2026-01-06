@@ -1,0 +1,2514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise| Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Enhanced Sidebar */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .profile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateX(2px);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+        /* Enhanced Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 32px 40px;
+            overflow-y: auto;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            max-width: 1400px;
+        }
+
+        .view {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced Stats Cards */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: #d1d5db;
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-icon.balance { 
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+        .stat-icon.income { 
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+        }
+        .stat-icon.expense { 
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .stat-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            transition: all 0.3s ease;
+            color: #1f2937;
+        }
+
+        .stat-info p {
+            color: #6b7280;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+
+        /* Enhanced Cards */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(168, 85, 247, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-color: #d1d5db;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+
+        .see-all {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .see-all::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+
+        .see-all:hover {
+            color: #5568d3;
+        }
+
+        .see-all:hover::after {
+            width: 100%;
+        }
+
+        /* Enhanced Transaction Items */
+        .transactions-list {
+            max-height: 360px; 
+            overflow-y: auto;
+            padding-right: 15px; 
+        }
+
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-item:hover {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.05));
+            transform: translateX(8px);
+            border-radius: 12px;
+            padding-left: 16px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .transaction-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .income-icon {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            color: #166534;
+        }
+
+        .expense-icon {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            color: #991b1b;
+        }
+
+        .transaction-item:hover .transaction-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .transaction-info {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .transaction-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .transaction-date {
+            font-size: 13px;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .amount-positive { color: #10b981; }
+        .amount-negative { color: #ef4444; }
+
+        /* Enhanced Chart Container */
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .chart-center h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .chart-center p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Custom Purple Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #7c3aed, #9333ea);
+        }
+
+        /* Enhanced Empty Section */
+        .empty-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: #666;
+            font-size: 16px;
+            background: rgba(139, 92, 246, 0.05);
+            border-radius: 12px;
+            border: 2px dashed rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .empty-section:hover {
+            background: rgba(139, 92, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 15px;
+            }
+            
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            
+            .container {
+                flex-direction: column;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        /* Cashflow Banner Enhancement */
+        .cashflow-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cashflow-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .cashflow-banner:hover::before {
+            left: 100%;
+        }
+
+        .cashflow-banner:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .cashflow-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .cashflow-banner:hover .cashflow-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .cashflow-message {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* Transaction List */
+        .transaction-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.2s ease;
+        }
+
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-item:hover {
+            background-color: #f8f9fa;
+            transform: translateX(4px);
+        }
+
+        .transaction-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        .income-icon {
+            background: #dcfce7;
+        }
+        .expense-icon {
+            background: #fee2e2;
+        }
+        
+        /* Custom Purple Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+        
+        .transaction-info {
+            flex: 1;
+        }
+
+        .transaction-name {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .transaction-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .transaction-amount {
+            font-weight: 600;
+        }
+
+        .amount-positive { color: #10b981; }
+        .amount-negative { color: #ef4444; }
+
+        /* Chart Container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .chart-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .chart-center h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .chart-center p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .income-item {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .income-item:hover {
+            transform: translateX(4px);
+        }
+
+        .income-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 18px;
+        }
+        
+        .cashflow-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        
+        .cashflow-message {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .income-info {
+            flex: 1;
+        }
+
+        .income-name {
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .income-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .income-amount {
+            font-weight: 600;
+            color: #10b981;
+        }
+
+        .empty-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            color: #666;
+            font-size: 16px;
+        }
+/* === Budget Alerts Section === */
+.budget-alerts-section {
+    background: linear-gradient(135deg, #ffffff 0%, #fff7f7 100%);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 30px rgba(255, 0, 0, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    transition: all 0.3s ease;
+}
+
+.budget-alerts-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(239, 68, 68, 0.12);
+}
+
+/* Header styling */
+.budget-alerts-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.alert-icon {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    color: #b91c1c;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.15);
+}
+
+.budget-alerts-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.4px;
+}
+
+/* Suggestion items styling */
+.suggestion-item {
+    border-left: 3px solid #f59e0b;
+}
+.suggestion-item[data-urgency="high"] {
+    border-left-color: #ef4444;
+}
+
+.urgency-badge {
+    background: #fef3c7;
+    color: #d97706;
+}
+.urgency-badge[data-urgency="high"] {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* Alert list */
+.budget-alerts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.alert-item {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffffff 100%);
+    border: 1px solid #fee2e2;
+    border-left: 6px solid #ef4444;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #7f1d1d;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.08);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 0.4s ease both;
+}
+
+.alert-dot {
+    font-size: 18px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.month-form {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #fafbfc);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(118, 75, 162, 0.08);
+    border: 1px solid rgba(118, 75, 162, 0.1);
+}
+
+.month-form label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.month-form label::before {
+    content: "📅";
+    font-size: 20px;
+    filter: grayscale(0);
+}
+
+#month {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: 2px solid rgba(118, 75, 162, 0.2);
+    font-size: 15px;
+    font-weight: 600;
+    background: white;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(118, 75, 162, 0.1);
+    min-width: 200px;
+}
+
+#month:hover {
+    border-color: #764ba2;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.2);
+    transform: translateY(-2px);
+}
+
+#month:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+}
+
+#month option {
+    padding: 10px;
+    background: white;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-content">
+            <div id="dashboard" class="view active">
+                <!-- Header Section -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+                    <div>
+                        <h1 style="font-size: 28px; font-weight: 700; color: #1f2937; margin: 0 0 8px 0;">Dashboard</h1>
+                        <p style="color: #6b7280; font-size: 14px; margin: 0;">Welcome back, {{ session.get('user_name', 'User') }}! 👋</p>
+                </div>
+                    <div style="display: flex; align-items: center; gap: 16px;">
+<!-- Month Selector -->
+                        <form method="get" action="{{ url_for('dashboard') }}" style="display: flex; align-items: center; gap: 12px;">
+                            <label for="month" style="font-weight: 500; color: #374151; font-size: 14px;">Month:</label>
+                            <select name="month" id="month" onchange="this.form.submit()" 
+                                    style="padding: 10px 16px; border-radius: 10px; border: 1.5px solid #e5e7eb; font-size: 14px; font-weight: 500; background: white; color: #374151; cursor: pointer; transition: all 0.2s; min-width: 180px;">
+        {% for m in month_options %}
+            <option value="{{ m.value }}" {% if selected_month == m.value %}selected{% endif %}>
+                {{ m.label }}
+            </option>
+        {% endfor %}
+    </select>
+</form>
+                        <!-- Notification Icon -->
+                        <div style="position: relative;">
+                            <button id="notification-btn" onclick="toggleNotifications()" 
+                                    style="position: relative; width: 44px; height: 44px; border-radius: 12px; border: 1.5px solid #e5e7eb; background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 20px;"
+                                    onmouseover="this.style.borderColor='#667eea'; this.style.background='#f8f9ff';"
+                                    onmouseout="this.style.borderColor='#e5e7eb'; this.style.background='white';">
+                                🔔
+                                <span id="notification-badge" style="position: absolute; top: -4px; right: -4px; background: #ef4444; color: white; border-radius: 50%; width: 20px; height: 20px; display: none; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; border: 2px solid white;">0</span>
+                            </button>
+                            <!-- Notification Dropdown -->
+                            <div id="notification-dropdown" style="display: none; position: absolute; top: 52px; right: 0; width: 380px; max-width: 90vw; background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); border: 1px solid #e5e7eb; z-index: 1000; max-height: 500px; overflow-y: auto;">
+                                <div style="padding: 16px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+                                    <h3 style="font-size: 16px; font-weight: 600; color: #1f2937; margin: 0;">Urgent Reminders</h3>
+                                    <button onclick="toggleNotifications()" style="background: none; border: none; font-size: 18px; cursor: pointer; color: #6b7280; padding: 4px;">✕</button>
+                                </div>
+                                <div id="notification-content" style="padding: 8px;">
+                                    <div style="text-align: center; padding: 40px 20px; color: #9ca3af;">
+                                        Loading reminders...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Alerts -->
+{% if alerts and alerts|length > 0 %}
+                <div class="budget-alerts-section" style="margin-bottom: 24px;">
+    <div class="budget-alerts-header">
+        <div class="alert-icon">⚠️</div>
+        <h2>Budget Alerts</h2>
+    </div>
+    <ul class="budget-alerts-list">
+        {% for a in alerts %}
+        <li class="alert-item">
+            <span class="alert-dot">🔴</span>
+            <span>{{ a.message }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon balance">💰</div>
+                        <div class="stat-info">
+                            <h3>{{ total_balance | currency_format }}</h3>
+                            <p>Money Left (This Month)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon income">📈</div>
+                        <div class="stat-info">
+                            <h3>{{ total_income | currency_format }}</h3>
+                            <p>Total Income (This Month)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon expense">💸</div>
+                        <div class="stat-info">
+                            <h3>{{ total_expenses | currency_format }}</h3>
+                            <p>Total Expenses (This Month)</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon expense">🏦</div>
+                        <div class="stat-info">
+                            <h3>{{ monthly_limit | currency_format }}</h3>
+                            <p>Monthly Budget</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top 3 Spending Categories -->
+                {% if top_3 and top_3|length > 0 %}
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="card-header">
+                        <h2 class="card-title">🏆 Top Spending Categories</h2>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 8px;">
+                        {% for item in top_3 %}
+                        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 20px; border-radius: 12px; text-align: center; border: 1px solid #e5e7eb; transition: all 0.2s;">
+                            <div style="font-size: 28px; margin-bottom: 12px;">{{ item.name.split(' ')[0] }}</div>
+                            <div style="font-weight: 600; margin-bottom: 6px; color: #374151; font-size: 15px;">{{ item.name.split(' ', 1)[1] if ' ' in item.name else item.name }}</div>
+                            <div style="color: #ef4444; font-size: 16px; font-weight: 700;">{{ item.amount | currency_format }}</div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Compact Predictions & Reminders Box -->
+                <div id="compact-predictions-box" style="margin-bottom: 24px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; padding: 24px; color: white; box-shadow: 0 8px 30px rgba(102, 126, 234, 0.25); border: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px;">
+                        <div>
+                            <div style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">📊 Spending Goals & Reminders</div>
+                            <div style="font-size: 13px; opacity: 0.9;">Track your progress in real-time</div>
+                        </div>
+                        <a href="{{ url_for('ml.predictions') }}" style="font-size: 13px; color: white; text-decoration: none; opacity: 0.9; font-weight: 500; padding: 6px 12px; background: rgba(255,255,255,0.2); border-radius: 8px; transition: all 0.2s;" 
+                           onmouseover="this.style.background='rgba(255,255,255,0.3)'" 
+                           onmouseout="this.style.background='rgba(255,255,255,0.2)'">View All →</a>
+                                </div>
+                    
+                    <div id="compact-predictions-content" style="background: rgba(255,255,255,0.15); border-radius: 12px; padding: 16px; backdrop-filter: blur(10px);">
+                        <div style="text-align: center; padding: 1rem; color: rgba(255,255,255,0.9);">
+                            Loading predictions...
+                                </div>
+                        </div>
+                    </div>
+
+                <!-- ML Features Section -->
+                {% if ml_category_warnings or ml_item_suggestions %}
+                <div class="card-grid" style="margin-bottom: 24px;">
+                    {% if ml_category_warnings %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">⚠️ Spending Alerts</h2>
+                            <a href="{{ url_for('ml.predictions') }}" class="see-all">View All →</a>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="display: grid; gap: 0.75rem;">
+                                {% for warning in ml_category_warnings %}
+                                <div class="category-warning" 
+                                     id="warning-{{ warning.category }}"
+                                     data-warning-category="{{ warning.category }}"
+                                     data-warning-date="{{ warning.date }}"
+                                     style="padding: 1rem; background: #fef2f2; border-radius: 12px; border-left: 4px solid #ef4444; position: relative;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.75rem;">
+                                        <div style="flex: 1;">
+                                            <div style="font-weight: 700; color: #333; font-size: 15px; margin-bottom: 0.5rem;">
+                                                📈 {{ warning.category }} Going Overboard
+                            </div>
+                                            <div style="font-size: 13px; color: #666; margin-bottom: 0.5rem; line-height: 1.5;">
+                                                {{ warning.message }}
+                        </div>
+                                            <div style="display: flex; gap: 1rem; font-size: 12px; margin-top: 0.5rem;">
+                                                <div style="padding: 0.5rem; background: white; border-radius: 6px;">
+                                                    <div style="color: #999; font-size: 11px;">Should be</div>
+                                                    <div style="font-weight: 600; color: #10b981; font-size: 14px;">₹{{ "%.0f"|format(warning.recommended_amount) }}</div>
+                            </div>
+                                                <div style="padding: 0.5rem; background: white; border-radius: 6px;">
+                                                    <div style="color: #999; font-size: 11px;">Predicted</div>
+                                                    <div style="font-weight: 600; color: #ef4444; font-size: 14px;">₹{{ "%.0f"|format(warning.predicted_amount) }}</div>
+                            </div>
+                                                <div style="padding: 0.5rem; background: white; border-radius: 6px;">
+                                                    <div style="color: #999; font-size: 11px;">Increase</div>
+                                                    <div style="font-weight: 600; color: #ef4444; font-size: 14px;">+{{ "%.0f"|format(warning.increase_pct) }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
+                                        <button class="warning-action-btn accept-btn accept-warning-btn"
+                                                data-category="{{ warning.category|e }}"
+                                                data-date="{{ warning.date|e }}"
+                                                data-recommended-amount="{{ warning.recommended_amount|default(0)|float }}"
+                                                style="flex: 1; padding: 0.5rem; background: #10b981; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer;">
+                                            ✓ Accept & Set Reminder
+                                        </button>
+                                        <button class="warning-action-btn dismiss-btn dismiss-warning-btn"
+                                                data-category="{{ warning.category|e }}"
+                                                data-date="{{ warning.date|e }}"
+                                                style="padding: 0.5rem 1rem; background: #f3f4f6; color: #666; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer;">
+                                            ✕ Discard
+                                        </button>
+                        </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    </div>
+                    {% endif %}
+
+                    {% if ml_item_suggestions %}
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">🛒 Buying Suggestions</h2>
+                            <a href="{{ url_for('ml.suggestions') }}" class="see-all">View All →</a>
+                        </div>
+                        <div style="padding: 1rem;">
+                            <div style="display: grid; gap: 0.75rem;">
+                                {% for item in ml_item_suggestions %}
+                                <div class="suggestion-item" data-urgency="{{ item.urgency }}" style="padding: 0.75rem; background: #f8f9fa; border-radius: 8px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                                        <div style="font-weight: 600; color: #333; font-size: 14px;">{{ item.item }}</div>
+                                        <span class="urgency-badge" data-urgency="{{ item.urgency }}" style="padding: 0.2rem 0.5rem; border-radius: 8px; font-size: 10px; font-weight: 600;">{{ item.urgency|upper }}</span>
+                                </div>
+                                    <div style="font-size: 12px; color: #666; margin-bottom: 0.25rem;">{{ item.category }}</div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div style="font-size: 11px; color: #999;">{{ item.message[:60] if item.message else (item.reminder + ' • ' + item.last_bought) }}...</div>
+                                        <div style="font-size: 14px; font-weight: 600; color: #667eea;">₹{{ "%.0f"|format(item.amount) }}</div>
+                            </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Accepted Category Warnings (stored on dashboard) -->
+    <div id="accepted-warnings-container" style="display: none; margin-top: 30px;">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">📌 Active Spending Reminders</h2>
+            </div>
+            <div id="accepted-warnings-list" style="padding: 1rem;">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script id="dashboard-data" type="application/json">
+        {
+            "total_balance": {{ total_balance }},
+            "total_expenses": {{ total_expenses }},
+            "total_income": {{ total_income }},
+            "segments": {{ segments|tojson }},
+            "breakdown": {{ breakdown|tojson }},
+            "cashflow": {{ cashflow|tojson }},
+            "segments_30": {{ segments_30|tojson }},
+            "breakdown_30": {{ breakdown_30|tojson }},
+            "top_3": {{ top_3|tojson }},
+            "cashflow_status": {{ cashflow_status|tojson }},
+            "recent_expenses": {{ recent_expenses|tojson }},
+            "recent_incomes": {{ recent_incomes|tojson }},
+            "urgent_reminders": {{ urgent_reminders|tojson }}
+        }
+    </script>
+
+    <script>
+        // Event listeners for warning buttons (delegated event handling)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('accept-warning-btn')) {
+                const category = e.target.getAttribute('data-category');
+                const date = e.target.getAttribute('data-date');
+                const recommendedAmount = parseFloat(e.target.getAttribute('data-recommended-amount')) || 0;
+                acceptCategoryWarning(category, date, recommendedAmount);
+            }
+            if (e.target.classList.contains('dismiss-warning-btn')) {
+                const category = e.target.getAttribute('data-category');
+                const date = e.target.getAttribute('data-date');
+                dismissCategoryWarning(category, date);
+            }
+        });
+        
+        // Notification Management
+        const dismissedReminders = {
+            get: function() {
+                const stored = localStorage.getItem('dismissed_reminders');
+                return stored ? JSON.parse(stored) : {};
+            },
+            set: function(dismissed) {
+                localStorage.setItem('dismissed_reminders', JSON.stringify(dismissed));
+            },
+            add: function(type, id) {
+                const dismissed = this.get();
+                const key = `${type}_${id}`;
+                dismissed[key] = {
+                    dismissed_at: new Date().toISOString()
+                };
+                this.set(dismissed);
+            },
+            isDismissed: function(type, id) {
+                const dismissed = this.get();
+                return !!dismissed[`${type}_${id}`];
+            }
+        };
+
+        function toggleNotifications() {
+            const dropdown = document.getElementById('notification-dropdown');
+            if (dropdown.style.display === 'none' || !dropdown.style.display) {
+                dropdown.style.display = 'block';
+                loadNotifications();
+            } else {
+                dropdown.style.display = 'none';
+            }
+        }
+
+        function loadNotifications() {
+            const content = document.getElementById('notification-content');
+            const data = JSON.parse(document.getElementById('dashboard-data').textContent);
+            const urgentReminders = data.urgent_reminders || {};
+            
+            let billsList = urgentReminders.bills || [];
+            let medicalList = urgentReminders.medical || [];
+            
+            // Filter out dismissed reminders
+            billsList = billsList.filter(bill => !dismissedReminders.isDismissed('bill', bill.id));
+            medicalList = medicalList.filter(med => !dismissedReminders.isDismissed('medical', med.id));
+            
+            const totalCount = billsList.length + medicalList.length;
+            updateNotificationBadge(totalCount);
+            
+            if (totalCount === 0) {
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 40px 20px; color: #9ca3af;">
+                        <div style="font-size: 48px; margin-bottom: 12px;">✅</div>
+                        <div style="font-size: 14px; font-weight: 500; color: #6b7280;">No urgent reminders</div>
+                        <div style="font-size: 12px; margin-top: 4px;">All caught up!</div>
+                    </div>
+                `;
+                return;
+            }
+            
+            let html = '';
+            
+            // Bills
+            if (billsList.length > 0) {
+                html += '<div style="margin-bottom: 16px;"><div style="font-size: 12px; font-weight: 600; color: #6b7280; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">📅 Bills</div>';
+                billsList.forEach(bill => {
+                    // Handle null/undefined, but allow 0 (today) to be valid
+                    const daysDiff = (bill.days_until_due !== null && bill.days_until_due !== undefined) ? bill.days_until_due : 999;
+                    // Skip if invalid
+                    if (daysDiff === 999) {
+                        return;
+                    }
+                    const isOverdue = daysDiff < 0;
+                    const isToday = daysDiff === 0;
+                    const isTomorrow = daysDiff === 1;
+                    
+                    let statusText = '';
+                    let statusColor = '#3b82f6';
+                    if (isOverdue) {
+                        statusText = `Overdue by ${-daysDiff} day${-daysDiff !== 1 ? 's' : ''}`;
+                        statusColor = '#ef4444';
+                    } else if (isToday) {
+                        statusText = 'Due today';
+                        statusColor = '#f59e0b';
+                    } else if (isTomorrow) {
+                        statusText = 'Due tomorrow';
+                        statusColor = '#f59e0b';
+                    } else {
+                        statusText = `${daysDiff} days left`;
+                    }
+                    
+                    html += `
+                        <div style="padding: 12px; background: ${isOverdue ? '#fef2f2' : '#f0f9ff'}; border-radius: 12px; border-left: 4px solid ${statusColor}; margin-bottom: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; color: #1f2937; font-size: 14px; margin-bottom: 4px;">${bill.name || 'Unnamed Bill'}</div>
+                                    <div style="font-size: 13px; color: #6b7280; margin-bottom: 4px;">
+                                        ${bill.amount ? '₹' + parseFloat(bill.amount).toFixed(2) : 'Amount not set'}
+                                    </div>
+                                    <div style="font-size: 12px; color: #9ca3af;">
+                                        Due: ${bill.due_date || 'Not set'}
+                                        <span style="margin-left: 8px; padding: 2px 6px; background: ${statusColor}20; border-radius: 4px; color: ${statusColor}; font-weight: 500; font-size: 11px;">
+                                            ${statusText}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="markAsPaid('bill', '${bill.id}', this)" 
+                                    style="width: 100%; padding: 8px; background: #10b981; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;"
+                                    onmouseover="this.style.background='#059669'"
+                                    onmouseout="this.style.background='#10b981'">
+                                ✓ Yes, Paid
+                            </button>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Medical Reminders
+            if (medicalList.length > 0) {
+                html += '<div><div style="font-size: 12px; font-weight: 600; color: #6b7280; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">🩺 Medical</div>';
+                medicalList.forEach(med => {
+                    const daysDiff = med.days_until_due;
+                    // Skip if days_until_due is null, undefined, or invalid
+                    if (daysDiff === null || daysDiff === undefined || daysDiff === 999) {
+                        return;
+                    }
+                    const isOverdue = daysDiff < 0;
+                    const isToday = daysDiff === 0;
+                    const isTomorrow = daysDiff === 1;
+                    
+                    let statusText = '';
+                    let statusColor = '#10b981';
+                    if (isOverdue) {
+                        statusText = `Overdue by ${-daysDiff} day${-daysDiff !== 1 ? 's' : ''}`;
+                        statusColor = '#ef4444';
+                    } else if (isToday) {
+                        statusText = 'Today';
+                        statusColor = '#f59e0b';
+                    } else if (isTomorrow) {
+                        statusText = 'Tomorrow';
+                        statusColor = '#f59e0b';
+                    } else {
+                        statusText = `${daysDiff} days left`;
+                    }
+                    
+                    html += `
+                        <div style="padding: 12px; background: ${isOverdue ? '#fef2f2' : '#f0fdf4'}; border-radius: 12px; border-left: 4px solid ${statusColor}; margin-bottom: 8px;">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+                                <div style="flex: 1;">
+                                    <div style="font-weight: 600; color: #1f2937; font-size: 14px; margin-bottom: 4px;">${med.title || 'Untitled'}</div>
+                                    ${med.location ? `<div style="font-size: 13px; color: #6b7280; margin-bottom: 4px;">📍 ${med.location}</div>` : ''}
+                                    <div style="font-size: 12px; color: #9ca3af;">
+                                        Date: ${med.date || 'Not set'}
+                                        <span style="margin-left: 8px; padding: 2px 6px; background: ${statusColor}20; border-radius: 4px; color: ${statusColor}; font-weight: 500; font-size: 11px;">
+                                            ${statusText}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="markAsPaid('medical', '${med.id}', this)" 
+                                    style="width: 100%; padding: 8px; background: #10b981; color: white; border: none; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s;"
+                                    onmouseover="this.style.background='#059669'"
+                                    onmouseout="this.style.background='#10b981'">
+                                ✓ Done
+                            </button>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            content.innerHTML = html;
+        }
+
+        function markAsPaid(type, id, button) {
+            dismissedReminders.add(type, id);
+            button.closest('div').style.transition = 'opacity 0.3s';
+            button.closest('div').style.opacity = '0';
+            setTimeout(() => {
+                loadNotifications();
+            }, 300);
+        }
+
+        function updateNotificationBadge(count) {
+            const badge = document.getElementById('notification-badge');
+            if (count > 0) {
+                badge.textContent = count > 99 ? '99+' : count;
+                badge.style.display = 'flex';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('notification-dropdown');
+            const button = document.getElementById('notification-btn');
+            if (dropdown && button && !dropdown.contains(event.target) && !button.contains(event.target)) {
+                dropdown.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = JSON.parse(document.getElementById('dashboard-data').textContent);
+            
+            // Initialize notification badge
+            const urgentReminders = data.urgent_reminders || {};
+            const billsCount = (urgentReminders.bills || []).filter(bill => !dismissedReminders.isDismissed('bill', bill.id)).length;
+            const medicalCount = (urgentReminders.medical || []).filter(med => !dismissedReminders.isDismissed('medical', med.id)).length;
+            updateNotificationBadge(billsCount + medicalCount);
+            const totalBalance = data.total_balance;
+            const totalExpenses = data.total_expenses;
+            const totalIncome = data.total_income;
+            const recentExpenses = data.recent_expenses;
+            const recentIncomes = data.recent_incomes;
+            const segments = data.segments || {};
+            const breakdown = data.breakdown || {};
+            const segments30 = data.segments_30 || {};
+            const breakdown30 = data.breakdown_30 || {};
+            const cashflow = data.cashflow || {};
+
+
+            function initExpenseChart() {
+                const ctx = document.getElementById('expenseChart');
+                if (!ctx) return;
+                
+                if (window.expenseChartInstance) {
+                    window.expenseChartInstance.destroy();
+                }
+                
+                const expenseDates = recentExpenses.map(e => e.date);
+                const expenseAmounts = recentExpenses.map(e => e.amount);
+                
+                window.expenseChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: expenseDates,
+                        datasets: [{
+                            label: 'Expenses',
+                            data: expenseAmounts,
+                            borderColor: '#3B82F6',
+                            backgroundColor: 'rgba(59,130,246,0.2)',
+                            fill: true,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                            }
+                        }
+                    }
+                });
+            }
+
+            function initializeCharts() {
+                initExpenseChart();
+                initSegmentsChart();
+                initBreakdownChart();
+                initCashflowChart();
+            }
+
+            function initSegmentsChart() {
+                const ctx = document.getElementById('segmentsChart');
+                if (!ctx) return;
+                const labels = ['Regular', 'Casual', 'Taxes', 'Investments'];
+                const values = [
+                    (segments30.regular ?? segments.regular) || 0,
+                    (segments30.casual ?? segments.casual) || 0,
+                    (segments30.taxes ?? segments.taxes) || 0,
+                    (segments30.investments ?? segments.investments) || 0
+                ];
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels,
+                        datasets: [{
+                            data: values,
+                            backgroundColor: ['#6366F1','#F59E0B','#EF4444','#10B981'],
+                            cutout: '60%'
+                        }]
+                    },
+                    options: { plugins: { legend: { position: 'bottom' } }, maintainAspectRatio: false }
+                });
+            }
+
+            function initBreakdownChart() {
+                const ctx = document.getElementById('breakdownChart');
+                if (!ctx) return;
+                const labels = Object.keys(Object.keys(breakdown30).length ? breakdown30 : breakdown);
+                const values = labels.map(k => (breakdown30[k] ?? breakdown[k]));
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: { labels, datasets: [{ label: 'Expense', data: values, backgroundColor: '#818CF8' }] },
+                    options: { plugins: { legend: { display: false } }, maintainAspectRatio: false }
+                });
+            }
+
+            function initCashflowChart() {
+                const ctx = document.getElementById('cashflowChart');
+                if (!ctx) return;
+                const months = Object.keys(cashflow).sort();
+                const incomeData = months.map(m => (cashflow[m]?.income) || 0);
+                const expenseData = months.map(m => (cashflow[m]?.expense) || 0);
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: months,
+                        datasets: [
+                            { label: 'Income', data: incomeData, borderColor: '#10B981', backgroundColor: 'rgba(16,185,129,0.2)', fill: true, tension: 0.2 },
+                            { label: 'Expense', data: expenseData, borderColor: '#EF4444', backgroundColor: 'rgba(239,68,68,0.2)', fill: true, tension: 0.2 }
+                        ]
+                    },
+                    options: { plugins: { legend: { position: 'bottom' } }, maintainAspectRatio: false }
+                });
+            }
+            initializeCharts();
+            
+            // Load and display accepted category warnings
+            loadAcceptedWarnings();
+            
+            // Load and display prediction alerts
+            loadPredictionAlerts();
+            
+            // Load and display category reminders
+            loadCategoryReminders();
+            
+            // Load compact predictions box
+            loadCompactPredictionsBox();
+            
+            // Hide dismissed warnings on page load
+            hideDismissedWarnings();
+            
+            // Real-time update check (every 30 seconds)
+            setInterval(checkWarningUpdates, 30000);
+            setInterval(updatePredictionAlerts, 30000); // Update prediction alerts
+            setInterval(updateCategoryReminders, 30000); // Update category reminders
+            setInterval(loadCompactPredictionsBox, 30000); // Update compact predictions box
+        });
+        
+        // Category Reminders Management
+        const categoryReminders = {
+            get: function() {
+                const stored = localStorage.getItem('category_reminders');
+                return stored ? JSON.parse(stored) : [];
+            },
+            set: function(reminders) {
+                localStorage.setItem('category_reminders', JSON.stringify(reminders));
+            },
+            add: function(reminder) {
+                const reminders = this.get();
+                const existing = reminders.find(r => r.category === reminder.category);
+                if (existing) {
+                    Object.assign(existing, reminder);
+                } else {
+                    reminders.push(reminder);
+                }
+                this.set(reminders);
+            },
+            remove: function(category) {
+                const reminders = this.get();
+                this.set(reminders.filter(r => r.category !== category));
+            }
+        };
+        
+        function loadCategoryReminders() {
+            const reminders = categoryReminders.get();
+            const container = document.getElementById('category-reminders-container');
+            const list = document.getElementById('category-reminders-list');
+            
+            if (!container || !list) return;
+            
+            if (reminders.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            container.style.display = 'block';
+            
+            // Fetch current category spending
+            fetch('/ml/api/category-alerts')
+                .then(res => res.json())
+                .then(data => {
+                    updateCategoryRemindersDisplay(reminders, data);
+                })
+                .catch(err => {
+                    console.error('Error loading category reminders:', err);
+                    updateCategoryRemindersDisplay(reminders, null);
+                });
+        }
+        
+        function updateCategoryRemindersDisplay(reminders, alertsData) {
+            const list = document.getElementById('category-reminders-list');
+            if (!list) return;
+            
+            list.innerHTML = reminders.map(reminder => {
+                // Find current alert data for this category
+                let currentAlert = null;
+                if (alertsData && alertsData.alerts) {
+                    currentAlert = alertsData.alerts.find(a => a.category === reminder.category);
+                }
+                
+                let currentSpending = 0;
+                let reduceBy = reminder.reduce_by || 0;
+                let statusMessage = '';
+                
+                if (currentAlert) {
+                    currentSpending = currentAlert.current_month;
+                    reduceBy = currentAlert.reduce_by;
+                    
+                    // Calculate how much left to reduce
+                    const excess = currentAlert.exjected_month - currentAlert.normal_average;
+                    const remaining = Math.max(0, excess - (currentAlert.normal_average - currentSpending));
+                    
+                    if (remaining > 0) {
+                        statusMessage = `Reduce by ₹${remaining.toFixed(0)} more to get back to normal`;
+                    } else {
+                        statusMessage = `✅ You're back on track!`;
+                    }
+                } else {
+                    statusMessage = 'Category is within normal spending';
+                }
+                
+                return `
+                <div class="category-reminder-item" 
+                     data-category="${reminder.category}"
+                     style="padding: 1rem; background: #fef2f2; border-radius: 8px; border-left: 4px solid #ef4444; margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #333; font-size: 15px; margin-bottom: 0.5rem;">
+                                ⚠️ ${reminder.category} Going Overboard
+                            </div>
+                            <div style="font-size: 13px; color: #666; margin-bottom: 0.75rem;">
+                                Normal: ₹${reminder.normal_amount.toFixed(0)}/month
+                            </div>
+                            <div id="category-status-${reminder.category}" style="font-size: 13px; font-weight: 600; color: #c33; margin-bottom: 0.5rem;">
+                                ${statusMessage}
+                            </div>
+                            ${currentAlert ? `
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; font-size: 12px;">
+                                <div style="padding: 0.5rem; background: white; border-radius: 4px;">
+                                    <div style="color: #999;">Current</div>
+                                    <div style="font-weight: 600; color: #ef4444;">₹${currentSpending.toFixed(0)}</div>
+                                </div>
+                                <div style="padding: 0.5rem; background: white; border-radius: 4px;">
+                                    <div style="color: #999;">Projected</div>
+                                    <div style="font-weight: 600; color: #ef4444;">₹${currentAlert.projected_month.toFixed(0)}</div>
+                                </div>
+                            </div>
+                            ` : ''}
+                        </div>
+                        <button onclick="removeCategoryReminder('${reminder.category}')" 
+                                style="padding: 0.25rem 0.75rem; background: #f3f4f6; color: #666; border: none; border-radius: 6px; font-size: 11px; cursor: pointer; margin-left: 1rem;">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+        
+        function removeCategoryReminder(category) {
+            categoryReminders.remove(category);
+            loadCategoryReminders();
+        }
+        
+        function updateCategoryReminders() {
+            const reminders = categoryReminders.get();
+            if (reminders.length === 0) return;
+            
+            // Refresh the display with latest data
+            fetch('/ml/api/category-alerts')
+                .then(res => res.json())
+                .then(data => {
+                    updateCategoryRemindersDisplay(reminders, data);
+                })
+                .catch(err => console.error('Error updating category reminders:', err));
+        }
+        
+        // Make function available globally
+        window.updateDashboardReminders = function() {
+            loadCategoryReminders();
+        };
+        
+        // Compact Predictions & Reminders Box
+        function loadCompactPredictionsBox() {
+            const reminders = categoryReminders.get();
+            const container = document.getElementById('compact-predictions-content');
+            if (!container) return;
+            
+            if (reminders.length === 0) {
+                // No reminders - show summary or hide
+                fetch('/ml/api/category-alerts')
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.alerts && data.alerts.length > 0) {
+                            const topAlert = data.alerts[0];
+                            container.innerHTML = `
+                                <div style="text-align: center;">
+                                    <div style="font-size: 13px; opacity: 0.9; margin-bottom: 0.5rem;">⚠️ ${topAlert.category} is ${topAlert.increase_pct}% above normal</div>
+                                    <div style="font-size: 11px; opacity: 0.8;">Set a reminder to track your progress</div>
+                                    <button onclick="window.location.href='{{ url_for('ml.predictions') }}'" 
+                                            style="margin-top: 0.75rem; padding: 0.5rem 1rem; background: white; color: #667eea; border: none; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">
+                                        View Predictions
+                                    </button>
+                                </div>
+                            `;
+                        } else {
+                            container.innerHTML = `
+                                <div style="text-align: center; padding: 0.5rem;">
+                                    <div style="font-size: 13px; opacity: 0.9;">✅ All categories within normal spending</div>
+                                </div>
+                            `;
+                        }
+                    })
+                    .catch(() => {
+                        container.innerHTML = '<div style="text-align: center; padding: 0.5rem; font-size: 12px; opacity: 0.8;">Unable to load predictions</div>';
+                    });
+                return;
+            }
+            
+            // Fetch current spending data
+            fetch('/ml/api/category-alerts')
+                .then(res => res.json())
+                .then(data => {
+                    const activeReminders = reminders.filter(r => {
+                        if (!data.alerts) return false;
+                        return data.alerts.some(a => a.category === r.category);
+                    });
+                    
+                    if (activeReminders.length === 0) {
+                        container.innerHTML = `
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 13px; opacity: 0.9;">✅ All reminders resolved!</div>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    // Show top active reminder with progress
+                    const topReminder = activeReminders[0];
+                    const currentAlert = data.alerts.find(a => a.category === topReminder.category);
+                    
+                    if (!currentAlert) {
+                        container.innerHTML = `
+                            <div style="text-align: center; padding: 0.5rem;">
+                                <div style="font-size: 13px; opacity: 0.9;">✅ ${topReminder.category} is back on track!</div>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    // Calculate progress and savings needed
+                    const target = currentAlert.normal_average;
+                    const current = currentAlert.current_month;
+                    const projected = currentAlert.projected_month;
+                    
+                    // Days calculation
+                    const today = new Date();
+                    const daysInMonth = today.getDate();
+                    const totalDaysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+                    const daysRemaining = totalDaysInMonth - daysInMonth;
+                    
+                    // Calculate daily spending rate
+                    const currentDailyRate = current / daysInMonth;
+                    const targetDailyRate = target / totalDaysInMonth;
+                    
+                    // Projected end-of-month based on current rate
+                    const projectedEndOfMonth = currentDailyRate * totalDaysInMonth;
+                    
+                    // How much over target we'll be
+                    const excessAtEndOfMonth = Math.max(0, projectedEndOfMonth - target);
+                    
+                    // How much we need to save (reduces as expenses are added if spending slows)
+                    // If current spending is less than target daily rate, we're on track
+                    const needToSave = currentDailyRate > targetDailyRate 
+                        ? excessAtEndOfMonth 
+                        : Math.max(0, projected - target);
+                    
+                    // Progress: how close current is to target (not projected)
+                    const progress = Math.min(100, Math.max(0, (current / target) * 100));
+                    
+                    // Calculate daily reduction needed
+                    const dailyReductionNeeded = needToSave > 0 && daysRemaining > 0 
+                        ? needToSave / daysRemaining 
+                        : 0;
+                    
+                    container.innerHTML = `
+                        <div style="margin-bottom: 1rem;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 0.75rem;">🎯 ${topReminder.category} Goal</div>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.75rem;">
+                                    <div style="font-size: 11px; opacity: 0.8; margin-bottom: 0.25rem;">Target</div>
+                                    <div style="font-size: 18px; font-weight: 700;">₹${target.toFixed(0)}</div>
+                                </div>
+                                <div style="background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.75rem;">
+                                    <div style="font-size: 11px; opacity: 0.8; margin-bottom: 0.25rem;">Current</div>
+                                    <div style="font-size: 18px; font-weight: 700;">₹${current.toFixed(0)}</div>
+                                </div>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); border-radius: 6px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                <div style="font-size: 12px; opacity: 0.9; margin-bottom: 0.5rem;">Progress to Goal</div>
+                                <div style="background: rgba(0,0,0,0.2); border-radius: 4px; height: 8px; overflow: hidden;">
+                                    <div style="background: ${progress >= 80 ? '#10b981' : progress >= 50 ? '#f59e0b' : '#ef4444'}; height: 100%; width: ${progress}%; transition: width 0.3s;"></div>
+                                </div>
+                                <div style="font-size: 11px; opacity: 0.8; margin-top: 0.25rem;">${progress.toFixed(0)}% of target</div>
+                            </div>
+                            <div style="background: ${needToSave > 0 ? 'rgba(239,68,68,0.3)' : 'rgba(16,185,129,0.3)'}; border-radius: 6px; padding: 0.75rem;">
+                                <div style="font-size: 12px; font-weight: 600; margin-bottom: 0.25rem;">
+                                    ${needToSave > 0 ? '💰 Need to Save' : '✅ On Track!'}
+                                </div>
+                                <div style="font-size: 16px; font-weight: 700;">
+                                    ${needToSave > 0 ? `₹${needToSave.toFixed(0)}` : 'Great job!'}
+                                </div>
+                                ${needToSave > 0 ? `
+                                <div style="font-size: 11px; opacity: 0.9; margin-top: 0.25rem;">
+                                    ${daysRemaining > 0 ? `Reduce by ₹${dailyReductionNeeded.toFixed(0)}/day (${daysRemaining} days left)` : 'Goal not met this month'}
+                                </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                        ${activeReminders.length > 1 ? `
+                        <div style="padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                            <button onclick="showAllReminders()" 
+                                    id="show-all-reminders-btn"
+                                    style="width: 100%; padding: 0.5rem; background: rgba(255,255,255,0.2); color: white; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                                +${activeReminders.length - 1} more reminder${activeReminders.length > 2 ? 's' : ''} (Click to view all)
+                            </button>
+                        </div>
+                        ` : ''}
+                        <div style="margin-top: 0.5rem;">
+                            <button onclick="discardReminder('${topReminder.category}')" 
+                                    style="width: 100%; padding: 0.5rem; background: rgba(239,68,68,0.3); color: white; border: none; border-radius: 6px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-top: 0.5rem;">
+                                ✕ Discard This Reminder
+                            </button>
+                        </div>
+                    `;
+                })
+                .catch(err => {
+                    console.error('Error loading compact predictions:', err);
+                    container.innerHTML = '<div style="text-align: center; padding: 0.5rem; font-size: 12px; opacity: 0.8;">Unable to load</div>';
+                });
+        }
+        
+        // Show all reminders in expanded view
+        function showAllReminders() {
+            const reminders = categoryReminders.get();
+            if (reminders.length === 0) return;
+            
+            // Fetch current alerts
+            fetch('/ml/api/category-alerts')
+                .then(res => res.json())
+                .then(data => {
+                    const activeReminders = reminders.filter(r => {
+                        if (!data.alerts) return false;
+                        return data.alerts.some(a => a.category === r.category);
+                    });
+                    
+                    if (activeReminders.length === 0) {
+                        alert('No active reminders');
+                        return;
+                    }
+                    
+                    // Create modal/expanded view
+                    const modal = document.createElement('div');
+                    modal.id = 'all-reminders-modal';
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: rgba(0,0,0,0.7);
+                        z-index: 10000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 2rem;
+                    `;
+                    
+                    const content = document.createElement('div');
+                    content.style.cssText = `
+                        background: white;
+                        border-radius: 16px;
+                        padding: 2rem;
+                        max-width: 600px;
+                        width: 100%;
+                        max-height: 80vh;
+                        overflow-y: auto;
+                        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                    `;
+                    
+                    let remindersHTML = activeReminders.map((reminder, index) => {
+                        const alert = data.alerts.find(a => a.category === reminder.category);
+                        if (!alert) return '';
+                        
+                        const target = alert.normal_average;
+                        const current = alert.current_month;
+                        const projected = alert.projected_month;
+                        const needToSave = Math.max(0, projected - target);
+                        const progress = Math.min(100, Math.max(0, (current / target) * 100));
+                        
+                        const today = new Date();
+                        const daysInMonth = today.getDate();
+                        const totalDaysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+                        const daysRemaining = totalDaysInMonth - daysInMonth;
+                        const dailyReductionNeeded = needToSave > 0 && daysRemaining > 0 ? needToSave / daysRemaining : 0;
+                        
+                        return `
+                            <div style="background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #667eea;">
+                                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <div style="font-size: 18px; font-weight: 700; color: #333; margin-bottom: 0.5rem;">
+                                            🎯 ${reminder.category}
+                                        </div>
+                                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; margin-bottom: 0.75rem;">
+                                            <div style="padding: 0.75rem; background: white; border-radius: 6px;">
+                                                <div style="font-size: 11px; color: #999; margin-bottom: 0.25rem;">Target</div>
+                                                <div style="font-size: 16px; font-weight: 600; color: #10b981;">₹${target.toFixed(0)}</div>
+                                            </div>
+                                            <div style="padding: 0.75rem; background: white; border-radius: 6px;">
+                                                <div style="font-size: 11px; color: #999; margin-bottom: 0.25rem;">Current</div>
+                                                <div style="font-size: 16px; font-weight: 600; color: #ef4444;">₹${current.toFixed(0)}</div>
+                                            </div>
+                                        </div>
+                                        <div style="background: white; border-radius: 6px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                            <div style="font-size: 12px; color: #666; margin-bottom: 0.5rem;">Progress to Goal</div>
+                                            <div style="background: #e5e7eb; border-radius: 4px; height: 8px; overflow: hidden;">
+                                                <div style="background: ${progress >= 80 ? '#10b981' : progress >= 50 ? '#f59e0b' : '#ef4444'}; height: 100%; width: ${progress}%; transition: width 0.3s;"></div>
+                                            </div>
+                                            <div style="font-size: 11px; color: #999; margin-top: 0.25rem;">${progress.toFixed(0)}% of target</div>
+                                        </div>
+                                        ${needToSave > 0 ? `
+                                        <div style="background: #fee; border-radius: 6px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                            <div style="font-size: 13px; color: #c33; font-weight: 600;">
+                                                💰 Need to Save: ₹${needToSave.toFixed(0)}
+                                            </div>
+                                            ${daysRemaining > 0 ? `
+                                            <div style="font-size: 11px; color: #999; margin-top: 0.25rem;">
+                                                Reduce by ₹${dailyReductionNeeded.toFixed(0)}/day (${daysRemaining} days left)
+                                            </div>
+                                            ` : ''}
+                                        </div>
+                                        ` : `
+                                        <div style="background: #efe; border-radius: 6px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                                            <div style="font-size: 13px; color: #10b981; font-weight: 600;">
+                                                ✅ On Track!
+                                            </div>
+                                        </div>
+                                        `}
+                                    </div>
+                                </div>
+                                <button onclick="discardReminder('${reminder.category}')" 
+                                        style="width: 100%; padding: 0.75rem; background: #ef4444; color: white; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+                                    ✕ Discard This Reminder
+                                </button>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    content.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <div style="font-size: 24px; font-weight: 700; color: #333;">📊 All Active Reminders</div>
+                            <button onclick="closeAllRemindersModal()" 
+                                    style="padding: 0.5rem; background: #f3f4f6; color: #666; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;">
+                                ✕
+                            </button>
+                        </div>
+                        <div id="all-reminders-list">
+                            ${remindersHTML}
+                        </div>
+                    `;
+                    
+                    modal.appendChild(content);
+                    document.body.appendChild(modal);
+                    
+                    // Close on outside click
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === modal) {
+                            closeAllRemindersModal();
+                        }
+                    });
+                })
+                .catch(err => {
+                    console.error('Error loading reminders:', err);
+                    alert('Error loading reminders. Please try again.');
+                });
+        }
+        
+        function closeAllRemindersModal() {
+            const modal = document.getElementById('all-reminders-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        function discardReminder(category) {
+            if (!confirm(`Are you sure you want to discard the reminder for ${category}?`)) {
+                return;
+            }
+            
+            categoryReminders.remove(category);
+            
+            // Close modal if open
+            closeAllRemindersModal();
+            
+            // Reload compact box
+            loadCompactPredictionsBox();
+            
+            // Show success message
+            console.log('Reminder discarded for', category);
+        }
+        
+        // Prediction Alerts Management
+        const predictionAlerts = {
+            get: function() {
+                const stored = localStorage.getItem('prediction_alerts');
+                return stored ? JSON.parse(stored) : [];
+            },
+            set: function(alerts) {
+                localStorage.setItem('prediction_alerts', JSON.stringify(alerts));
+            },
+            remove: function(date) {
+                const alerts = this.get();
+                this.set(alerts.filter(a => a.date !== date));
+            }
+        };
+        
+        function loadPredictionAlerts() {
+            const alerts = predictionAlerts.get();
+            const container = document.getElementById('prediction-alerts-container');
+            const list = document.getElementById('prediction-alerts-list');
+            
+            if (!container || !list) return;
+            
+            if (alerts.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            container.style.display = 'block';
+            
+            // Fetch current actual expenses to compare
+            fetch('/ml/api/predictions')
+                .then(res => res.json())
+                .then(data => {
+                    updatePredictionAlertsDisplay(alerts, data);
+                })
+                .catch(err => {
+                    console.error('Error loading prediction alerts:', err);
+                    updatePredictionAlertsDisplay(alerts, null);
+                });
+        }
+        
+        function updatePredictionAlertsDisplay(alerts, predictionsData) {
+            const list = document.getElementById('prediction-alerts-list');
+            if (!list) return;
+            
+            list.innerHTML = alerts.map(alert => {
+                // Get actual spending for this date
+                let actualSpending = 0;
+                let status = 'pending';
+                let statusMessage = '';
+                
+                if (predictionsData && predictionsData.predictions) {
+                    const pred = predictionsData.predictions.find(p => p.date === alert.date);
+                    if (pred) {
+                        // Try to get actual expenses for this date
+                        fetch(`/api/expenses?date=${alert.date}`)
+                            .then(res => res.json())
+                            .catch(() => {});
+                    }
+                }
+                
+                // Check if date has passed
+                const alertDate = new Date(alert.date);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                
+                if (alertDate < today) {
+                    status = 'completed';
+                    statusMessage = 'Day has passed - check your expenses';
+                } else if (alertDate.toDateString() === today.toDateString()) {
+                    status = 'active';
+                    statusMessage = 'Today - track your spending';
+                } else {
+                    status = 'upcoming';
+                    statusMessage = `Coming in ${Math.ceil((alertDate - today) / (1000 * 60 * 60 * 24))} day(s)`;
+                }
+                
+                return `
+                <div class="prediction-alert-item" 
+                     data-alert-date="${alert.date}"
+                     style="padding: 1rem; background: ${status === 'active' ? '#eff6ff' : status === 'completed' ? '#f0fdf4' : '#f8f9fa'}; 
+                            border-radius: 8px; border-left: 4px solid ${status === 'active' ? '#3b82f6' : status === 'completed' ? '#10b981' : '#94a3b8'}; 
+                            margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 0.25rem;">
+                                📅 ${alert.date} (${alert.category || 'All Categories'})
+                            </div>
+                            <div style="font-size: 13px; color: #666; margin-bottom: 0.5rem;">
+                                Predicted: ₹${alert.predicted_amount.toFixed(0)} • ${statusMessage}
+                            </div>
+                            <div id="actual-${alert.date}" style="font-size: 12px; color: #999;">
+                                Loading actual spending...
+                            </div>
+                        </div>
+                        <button onclick="removePredictionAlert('${alert.date}')" 
+                                style="padding: 0.25rem 0.75rem; background: #f3f4f6; color: #666; border: none; border-radius: 6px; font-size: 11px; cursor: pointer;">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+            
+            // Update actual spending for each alert
+            alerts.forEach(alert => {
+                updateAlertActualSpending(alert.date);
+            });
+        }
+        
+        function updateAlertActualSpending(date) {
+            // Fetch actual expenses from predictions API (which includes actual_vs_predicted)
+            fetch('/ml/api/predictions')
+                .then(res => res.json())
+                .then(data => {
+                    const actualElement = document.getElementById(`actual-${date}`);
+                    if (!actualElement) return;
+                    
+                    const alert = predictionAlerts.get().find(a => a.date === date);
+                    if (!alert) return;
+                    
+                    const predicted = alert.predicted_amount || 0;
+                    
+                    // Get actual from actual_vs_predicted if available
+                    if (data.actual_vs_predicted && data.actual_vs_predicted[date]) {
+                        const comparison = data.actual_vs_predicted[date];
+                        const actual = comparison.actual || 0;
+                        const difference = predicted - actual;
+                        
+                        if (actual > 0) {
+                            if (difference > 0) {
+                                actualElement.innerHTML = `✅ Actual: ₹${actual.toFixed(0)} • You saved ₹${difference.toFixed(0)}`;
+                                actualElement.style.color = '#10b981';
+                            } else {
+                                actualElement.innerHTML = `⚠️ Actual: ₹${actual.toFixed(0)} • You spent ₹${Math.abs(difference).toFixed(0)} more`;
+                                actualElement.style.color = '#ef4444';
+                            }
+                        } else {
+                            actualElement.innerHTML = 'No expenses recorded yet';
+                            actualElement.style.color = '#999';
+                        }
+                    } else {
+                        // Check if date is today or past
+                        const alertDate = new Date(date);
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+                        
+                        if (alertDate < today) {
+                            actualElement.innerHTML = 'Day has passed - check your expenses page';
+                            actualElement.style.color = '#999';
+                        } else if (alertDate.toDateString() === today.toDateString()) {
+                            actualElement.innerHTML = 'Track your spending today';
+                            actualElement.style.color = '#3b82f6';
+                        } else {
+                            actualElement.innerHTML = 'Upcoming - alert is active';
+                            actualElement.style.color = '#999';
+                        }
+                    }
+                })
+                .catch(err => {
+                    const actualElement = document.getElementById(`actual-${date}`);
+                    if (actualElement) {
+                        const today = new Date().toISOString().split('T')[0];
+                        if (date <= today) {
+                            actualElement.innerHTML = 'Check your expenses page for actual spending';
+                        } else {
+                            actualElement.innerHTML = 'Upcoming - alert is active';
+                        }
+                    }
+                });
+        }
+        
+        function removePredictionAlert(date) {
+            predictionAlerts.remove(date);
+            loadPredictionAlerts();
+        }
+        
+        function updatePredictionAlerts() {
+            const alerts = predictionAlerts.get();
+            if (alerts.length === 0) return;
+            
+            // Update actual spending for all alerts
+            alerts.forEach(alert => {
+                updateAlertActualSpending(alert.date);
+            });
+        }
+        
+        // Make function available globally for predictions page
+        window.updateDashboardAlerts = function() {
+            loadPredictionAlerts();
+        };
+        
+        function hideDismissedWarnings() {
+            const dismissed = dismissedWarnings.get();
+            Object.keys(dismissed).forEach(category => {
+                const warningCard = document.getElementById(`warning-${category}`) || document.querySelector(`[data-warning-category="${category}"]`);
+                if (warningCard) {
+                    warningCard.style.display = 'none';
+                }
+            });
+        }
+        
+        // Category warning management
+        const warningStorage = {
+            get: function() {
+                const stored = localStorage.getItem('accepted_warnings');
+                return stored ? JSON.parse(stored) : [];
+            },
+            set: function(warnings) {
+                localStorage.setItem('accepted_warnings', JSON.stringify(warnings));
+            },
+            add: function(warning) {
+                const warnings = this.get();
+                warnings.push({
+                    ...warning,
+                    accepted_at: new Date().toISOString()
+                });
+                this.set(warnings);
+            },
+            remove: function(category) {
+                const warnings = this.get();
+                this.set(warnings.filter(w => w.category !== category));
+            }
+        };
+        
+        const dismissedWarnings = {
+            get: function() {
+                const stored = localStorage.getItem('dismissed_warnings');
+                return stored ? JSON.parse(stored) : {};
+            },
+            set: function(dismissed) {
+                localStorage.setItem('dismissed_warnings', JSON.stringify(dismissed));
+            },
+            add: function(category, date) {
+                const dismissed = this.get();
+                dismissed[category] = {
+                    date: date,
+                    dismissed_at: new Date().toISOString(),
+                    permanent: true  // Permanently dismissed
+                };
+                this.set(dismissed);
+            },
+            shouldShow: function(category) {
+                // If dismissed, never show again
+                const dismissed = this.get();
+                return !dismissed[category];
+            },
+            remove: function(category) {
+                const dismissed = this.get();
+                delete dismissed[category];
+                this.set(dismissed);
+            }
+        };
+        
+        function acceptCategoryWarning(category, date, recommendedAmount) {
+            const warningCard = document.getElementById(`warning-${category}`) || document.querySelector(`[data-warning-category="${category}"]`);
+            if (!warningCard) {
+                console.error('Warning card not found for category:', category);
+                return;
+            }
+            
+            const warningData = {
+                category: category,
+                date: date,
+                recommended_amount: recommendedAmount,
+                message: `Keep ${category} spending under ₹${recommendedAmount.toFixed(0)}`
+            };
+            
+            warningStorage.add(warningData);
+            
+            // Also add to categoryReminders for the compact box
+            const reminder = {
+                category: category,
+                normal_amount: recommendedAmount,
+                reduce_by: 0, // Will be calculated from alerts
+                set_at: new Date().toISOString(),
+                status: 'active'
+            };
+            categoryReminders.add(reminder);
+            
+            dismissedWarnings.remove(category); // Remove from dismissed if was dismissed
+            
+            // Hide the warning card
+            warningCard.style.transition = 'opacity 0.3s';
+            warningCard.style.opacity = '0';
+            setTimeout(() => {
+                warningCard.style.display = 'none';
+            }, 300);
+            
+            // Load accepted warnings and update reminders immediately
+            setTimeout(() => {
+                loadAcceptedWarnings();
+                loadCategoryReminders(); // Also reload category reminders
+                loadCompactPredictionsBox(); // Update compact box
+                console.log('Accepted warnings loaded:', warningStorage.get());
+                console.log('Category reminders:', categoryReminders.get());
+            }, 350);
+        }
+        
+        function dismissCategoryWarning(category, date) {
+            const warningCard = document.getElementById(`warning-${category}`) || document.querySelector(`[data-warning-category="${category}"]`);
+            if (warningCard) {
+                warningCard.style.transition = 'opacity 0.3s';
+                warningCard.style.opacity = '0';
+                setTimeout(() => {
+                    warningCard.style.display = 'none';
+                }, 300);
+            }
+            
+            // Store dismissal - permanently hide this warning (never show again)
+            dismissedWarnings.add(category, date);
+        }
+        
+        function loadAcceptedWarnings() {
+            const accepted = warningStorage.get();
+            const container = document.getElementById('accepted-warnings-container');
+            const list = document.getElementById('accepted-warnings-list');
+            
+            if (!container || !list) return;
+            
+            if (accepted.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+            
+            container.style.display = 'block';
+            list.innerHTML = accepted.map(warning => {
+                const recommendedAmount = warning.recommended_amount || warning.recommendedAmount || 0;
+                const message = warning.message || `Keep ${warning.category} spending under ₹${recommendedAmount.toFixed(0)}`;
+                return `
+                <div class="accepted-warning-item" 
+                     data-warning-category="${warning.category}"
+                     style="padding: 1rem; background: #f0fdf4; border-radius: 8px; border-left: 4px solid #10b981; margin-bottom: 0.75rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="flex: 1;">
+                            <div style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 0.25rem;">
+                                📌 ${warning.category} - Keep under ₹${recommendedAmount.toFixed(0)}
+                            </div>
+                            <div style="font-size: 12px; color: #666;">${message} - Updates in real-time</div>
+                        </div>
+                        <button onclick="removeCategoryWarning('${warning.category}')" 
+                                style="padding: 0.25rem 0.75rem; background: #f3f4f6; color: #666; border: none; border-radius: 6px; font-size: 11px; cursor: pointer;">
+                            Remove
+                        </button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+        
+        function removeCategoryWarning(category) {
+            warningStorage.remove(category);
+            loadAcceptedWarnings();
+        }
+        
+        function checkWarningUpdates() {
+            // Check if warnings are resolved
+            const accepted = warningStorage.get();
+            
+            // Fetch current predictions to check if warnings are resolved
+            fetch('/ml/api/predictions')
+                .then(res => res.json())
+                .then(data => {
+                    if (data.category_warnings) {
+                        const currentWarnings = data.category_warnings || [];
+                        const dismissed = dismissedWarnings.get();
+                        
+                        // Hide dismissed warnings permanently
+                        currentWarnings.forEach(warning => {
+                            if (dismissed[warning.category]) {
+                                const warningCard = document.getElementById(`warning-${warning.category}`) || document.querySelector(`[data-warning-category="${warning.category}"]`);
+                                if (warningCard) {
+                                    warningCard.style.display = 'none';
+                                }
+                            }
+                        });
+                        
+                        // Check accepted warnings
+                        if (accepted.length > 0) {
+                            const warningCategories = new Set(currentWarnings.map(w => w.category));
+                            
+                            accepted.forEach(warning => {
+                                if (!warningCategories.has(warning.category)) {
+                                    // Warning resolved - show success notification
+                                    showWarningResolvedNotification(warning);
+                                    warningStorage.remove(warning.category);
+                                }
+                            });
+                        }
+                        
+                        loadAcceptedWarnings();
+                    }
+                })
+                .catch(err => console.error('Error checking warning updates:', err));
+        }
+        
+        function showWarningResolvedNotification(warning) {
+            // Show a success notification when warning is resolved
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10b981;
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 10000;
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.innerHTML = `
+                <div style="font-weight: 600; margin-bottom: 0.25rem;">✅ Back in Budget!</div>
+                <div style="font-size: 13px; opacity: 0.9;">Your ${warning.category} spending is back on track</div>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transition = 'opacity 0.3s';
+                notification.style.opacity = '0';
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+    </script>
+    
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        .peak-action-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .peak-notification {
+            transition: all 0.3s ease;
+        }
+    </style>
+</body>
+</html>

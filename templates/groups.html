@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise | Groups</title>
+    <style>
+        /* Replicating styles from dashboard.html */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #333; }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateX(2px);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+        .main-content { flex: 1; margin-left: 250px; padding: 30px; overflow-y: auto; min-height: 100vh; }
+        .card { background: white; border-radius: 12px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 30px;}
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .card-title { font-size: 18px; font-weight: 600; color: #333; }
+        .group-list-scroll {
+            max-height: 200px; 
+            overflow-y: auto;
+            padding-right: 15px; 
+            margin-top: 5px; 
+        }
+
+        .group-list-scroll .group-item {
+            padding: 10px 0; 
+            border-bottom: 1px solid #eee; 
+        }
+
+        .group-list-scroll .group-item:last-child {
+            border-bottom: none;
+        }
+        .group-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .group-item:last-child { border-bottom: none; }
+        .group-name { font-weight: 600; font-size: 16px; }
+        .group-meta { font-size: 12px; color: #999; margin-top: 4px;}
+        .group-link { text-decoration: none; padding: 8px 15px; border-radius: 6px; background: #667eea; color: white; transition: background 0.2s ease; font-size: 14px; }
+        .group-link:hover { background: #764ba2; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
+        /* Updated input styles to include email type */
+        .form-group input[type="text"], .form-group input[type="email"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+        .submit-btn {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        .alert { padding: 15px; border-radius: 8px; margin-bottom: 20px; font-weight: 500; }
+        .alert-success { background: #dcfce7; color: #10b981; border: 1px solid #10b981; }
+        .alert-error { background: #fee2e2; color: #ef4444; border: 1px solid #ef4444; }
+        .invite-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .invite-info { flex: 1; }
+        .btn-accept { padding: 8px 15px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; margin-left: 10px; }
+        .btn-accept:hover { background: #0c8a62; }
+
+        /* --- New Two-Column Grid --- */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            gap: 30px;
+            margin-bottom: 30px; /* Space below the grid */
+        }
+        
+        /* Responsive adjustment for small screens */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr; /* Stack columns on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1>👪 Family Expense Groups</h1>
+            <p style="color: #666; margin-bottom: 30px;">Manage shared expenses with your family and friends.</p>
+
+            <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %} -->
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">📨 Pending Invitations ({{ pending_invites|length }})</h2>
+                </div>
+                {% if pending_invites %}
+                    {% for invite in pending_invites %}
+                        <div class="invite-item">
+                            <div class="invite-info">
+                                <div class="group-name">{{ invite.group_name }}</div>
+                                <div class="group-meta">Invited by {{ invite.sender_name }}</div>
+                            </div>
+                            <form method="POST" action="{{ url_for('accept_invite', group_id=invite.group_id, invite_id=invite.invite_id) }}" style="margin: 0;">
+                                <button type="submit" class="btn-accept">Accept Invitation</button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p style="padding-top: 5px; color: #999;">No pending invitations.</p>
+                {% endif %}
+            </div>
+
+            <div class="content-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">➕ Create New Group & Invite</h2>
+                    </div>
+                    <form method="POST" action="{{ url_for('create_group') }}">
+                        <div class="form-group">
+                            <label for="group_name">Group Name</label>
+                            <input type="text" id="group_name" name="group_name" placeholder="e.g., House Rent, Family Trip" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="invite_email">Invite Initial Member (Optional)</label>
+                            <input type="email" id="invite_email" name="invite_email" placeholder="user@example.com">
+                        </div>
+
+                        <button type="submit" class="submit-btn" style="width: 100%;">Create Group</button>
+                    </form>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">📂 My Groups ({{ my_groups|length }})</h2>
+                    </div>
+
+                    <div class="group-list-scroll">
+                        {% if my_groups %}
+                            {% for group in my_groups %}
+                                <div class="group-item">
+                                    <div>
+                                        <div class="group-name">{{ group.name }}</div>
+                                        <div class="group-meta">
+                                            {% if group.owner_id == session.get('user_id') %}
+                                                **Owner** | {{ group.members|length }} members
+                                            {% else %}
+                                                Member | Owned by {{ group.owner_name }}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <a href="{{ url_for('group_details', group_id=group._id) }}" class="group-link">View Expenses</a>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p style="padding-top: 5px; color: #999;">You are not a member of any groups yet.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

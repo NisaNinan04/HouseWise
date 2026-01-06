@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise | Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+
+        .profile-pic {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        .nav-icon {
+            margin-right: 12px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            position: relative;
+        }
+
+        .page-header-content {
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+.reset-limits-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reset-limits-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+}
+
+        /* Settings Card */
+        .settings-card {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .card-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        /* Monthly Budget Section */
+        .budget-section {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 24px;
+            align-items: center;
+            padding: 24px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(168, 85, 247, 0.03));
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            border-radius: 12px;
+            margin-bottom: 32px;
+        }
+
+        .budget-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .budget-icon {
+            font-size: 32px;
+        }
+
+        .budget-label-wrapper {
+            flex: 1;
+        }
+
+        .budget-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .budget-subtitle {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .budget-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .budget-input-wrapper .form-input {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        /* Form Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+            background: white;
+        }
+
+        .form-input:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            background: white;
+        }
+
+        .category-icon {
+            position: absolute;
+            top: 45px;
+            right: 16px;
+            font-size: 20px;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Messages */
+        .message {
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .message.success {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .message.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .settings-card {
+                padding: 24px;
+            }
+
+            .page-header h1 {
+                font-size: 36px;
+            }
+
+            .page-header {
+                padding: 60px 20px 30px;
+            }
+
+            .reset-limits-btn {
+                top: 15px;
+                right: 15px;
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .budget-section {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .budget-input-wrapper {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .budget-input-wrapper .form-input {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div class="page-header">
+                <button type="button" class="reset-limits-btn" onclick="resetAllLimits()">
+                    <span>🔄</span>
+                    <span>Reset Limits</span>
+                </button>
+                <div class="page-header-content">
+                    <h1>Settings</h1>
+                    <p>Manage your monthly budget and spending limits for each category</p>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <div class="budget-section">
+                    <div class="budget-info">
+                        <span class="budget-icon">💵</span>
+                        <div class="budget-label-wrapper">
+                            <div class="budget-title">Monthly Budget</div>
+                            <div class="budget-subtitle">Total spending limit per month</div>
+                        </div>
+                    </div>
+                    <div class="budget-input-wrapper">
+                        <input type="number" id="monthly_budget" name="monthly_budget" 
+                               value="{{ limits.get('monthly_budget', 0) }}" 
+                               min="0" 
+                               step="0.01"
+                               class="form-input"
+                               placeholder="Enter budget" required>
+                    </div>
+                </div>
+
+                <h2 class="card-title">Category Spending Limits</h2>
+                <form method="POST" action="{{ url_for('settings') }}" id="settingsForm">
+                    <input type="hidden" name="monthly_budget" id="hidden_monthly_budget">
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="groceries" class="form-label">Groceries</label>
+                            <input type="number" id="groceries" name="groceries" 
+                                   value="{{ limits.get('groceries', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">🛒</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medicine" class="form-label">Medicine</label>
+                            <input type="number" id="medicine" name="medicine" 
+                                   value="{{ limits.get('medicine', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">💊</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="toiletries" class="form-label">Toiletries</label>
+                            <input type="number" id="toiletries" name="toiletries" 
+                                   value="{{ limits.get('toiletries', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">🧴</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="clothes" class="form-label">Clothes</label>
+                            <input type="number" id="clothes" name="clothes" 
+                                   value="{{ limits.get('clothes', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">👕</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stationery" class="form-label">Stationery</label>
+                            <input type="number" id="stationery" name="stationery" 
+                                   value="{{ limits.get('stationery', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">📝</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bills" class="form-label">Bills</label>
+                            <input type="number" id="bills" name="bills" 
+                                   value="{{ limits.get('bills', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">🧾</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="food" class="form-label">Food</label>
+                            <input type="number" id="food" name="food" 
+                                   value="{{ limits.get('food', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">🍽️</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="transport" class="form-label">Transport</label>
+                            <input type="number" id="transport" name="transport" 
+                                   value="{{ limits.get('transport', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">🚗</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="miscellaneous" class="form-label">Miscellaneous</label>
+                            <input type="number" id="miscellaneous" name="miscellaneous" 
+                                   value="{{ limits.get('miscellaneous', 0) }}" 
+                                   min="0" 
+                                   step="0.01"
+                                   class="form-input"
+                                   placeholder="Enter limit amount" required>
+                            <div class="category-icon">📦</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Save All Settings
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('settingsForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const monthlyBudget = document.getElementById('monthly_budget');
+            const hiddenBudget = document.getElementById('hidden_monthly_budget');
+
+            // Sync monthly budget to hidden field
+            monthlyBudget.addEventListener('input', function() {
+                hiddenBudget.value = this.value;
+            });
+            hiddenBudget.value = monthlyBudget.value;
+
+            // Allow real form submission to Flask
+            form.addEventListener('submit', function(e) {
+                submitBtn.innerHTML = '<span class="loading-spinner"></span>Saving Changes...';
+                submitBtn.disabled = true;
+
+                // Copy budget value
+                hiddenBudget.value = monthlyBudget.value;
+
+                // After small delay, submit to Flask (so user sees loading)
+                setTimeout(() => {
+                    form.submit();
+                }, 500);
+            });
+
+            // Input formatting
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.value && this.type === 'number') {
+                        this.value = parseFloat(this.value).toFixed(2);
+                    }
+                });
+            });
+        });
+
+        function resetAllLimits() {
+            if (confirm('Are you sure you want to reset all limits to 0? This action cannot be undone.')) {
+                document.getElementById('monthly_budget').value = '0.00';
+                document.querySelectorAll('.form-input[type="number"]').forEach(input => {
+                    if (input.id !== 'monthly_budget') {
+                        input.value = '0.00';
+                    }
+                });
+                alert('All limits have been reset to 0.');
+            }
+        }
+    </script>
+</body>
+</html>

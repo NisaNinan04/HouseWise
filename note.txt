@@ -1,0 +1,30 @@
+pip install Flask
+
+#for mongodb
+pip install Flask-PyMongo
+pip install PyMongo
+
+#for env & utilities 
+pip install python-dotenv
+pip install werkzeug
+
+#for easyocr (handwriting)
+pip install easyocr 
+pip install opencv-python
+pip install numpy
+
+#for image and pdf and date
+pip install Pillow
+pip install pymupdf
+pip install python-dateutil
+
+----------------------------------
+
+MONGODB:
+database name = sem5
+collections name:
+incomes
+purchases
+settings
+users
+savings

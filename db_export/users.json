@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "68d513f610b91c3183055d59",
+    "fullname": "john",
+    "email": "john@example.com",
+    "password_hash": "scrypt:32768:8:1$kJnjwUA1eHjHSwau$4d995e80e867d57fefc8a9fef7d54662f2bd54a1cb8b82cb1d0ee0c11adddde6a9c77e7806aaab9e8e034238abef893053138a3bfa02bcdf9bffd2bd4b206823",
+    "created_at": "2025-09-25T10:05:42.085000"
+  },
+  {
+    "_id": "68d516b77703846145a38119",
+    "username": "testuser",
+    "email": "test@example.com",
+    "password": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "created_at": "2025-01-17 12:00:00",
+    "fullname": "testuser",
+    "password_hash": "password123"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f16",
+    "fullname": "Rajesh Kumar",
+    "email": "rajesh.kumar@example.com",
+    "password_hash": "scrypt:32768:8:1$93lN3HL21aUiG2kE$5bfaecbb1c0d9a0ba337e1501b0aed432b265aca28a157c56e485f0599b1d0d9063f1d42e85641a8b2e26db5f24e3d08337ac69e281e3bf78b93a0f0d33224e6",
+    "created_at": "2025-08-08T17:05:44.729000"
+  },
+  {
+    "_id": "690cd5683a609b2a7a530f17",
+    "fullname": "Priya Sharma",
+    "email": "priya.sharma@example.com",
+    "password_hash": "scrypt:32768:8:1$5LZsPVGZLMc8fErM$be93c5d2d7b9f84df23db3ef199ecabe83fee209392be23b3e73c9f544ebf5513ba9637ba81c842be438132fb09af4966fd87bef49d13a1a97cddb925b1c98c8",
+    "created_at": "2025-09-07T17:05:44.797000"
+  },
+  {
+    "_id": "690cd57384454e60cb8404ac",
+    "email": "a@gmail.com",
+    "fullname": "abc",
+    "password_hash": "scrypt:32768:8:1$J0yypGrdhsPRsPUD$fa30d3bb57d9f277107d22941799c8bd5fdb3c4f3c00324b18c3022f7f488ad3843d786b179fd21ab3c71605dc8d1831d39490b000c1dd9f80978f81739c8417",
+    "created_at": "2025-11-06T17:05:55.127000"
+  },
+  {
+    "_id": "690cd57384454e60cb8404ad",
+    "email": "s@gmail.com",
+    "fullname": "s",
+    "password_hash": "scrypt:32768:8:1$6ufXRWhtEWFLiGFC$313147a107d63692971b211bb7cfb1f7af7d63b7a349cb8bc23c6e71093babc82e10f42b505b05f0c1d800ba69c274c57db5ddba5051a05e7f7f7ac2b2557b8d",
+    "created_at": "2025-11-06T17:05:55.132000"
+  }
+]

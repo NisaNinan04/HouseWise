@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Buying Reminders - HouseWise{% endblock %}
+
+{% block content %}
+<div class="main-content" style="max-width: 900px; margin: 0 auto; padding: 2rem;">
+    <div style="margin-bottom: 2rem;">
+        <h1 style="font-size: 28px; font-weight: 700; color: #333; margin-bottom: 0.5rem;">🛒 Buying Reminders</h1>
+        <p style="color: #666; font-size: 14px;">Based on your purchase history</p>
+    </div>
+
+    {% if error %}
+    <div style="background: #fee; border: 1px solid #fcc; border-radius: 8px; padding: 1rem; margin-bottom: 2rem;">
+        <p style="color: #c33; margin: 0;">⚠️ {{ error }}</p>
+    </div>
+    {% endif %}
+
+    {% if item_suggestions %}
+    <div style="display: grid; gap: 1.25rem; margin-bottom: 2rem;">
+        {% for item in item_suggestions %}
+        <div class="suggestion-card" style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                <div style="flex: 1;">
+                    <div style="font-size: 22px; font-weight: 700; color: #333; margin-bottom: 0.5rem;">{{ item.item }}</div>
+                    <div style="font-size: 14px; color: #666; margin-bottom: 0.75rem;">{{ item.category }}</div>
+                    <div style="font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 0.5rem;">{{ item.message }}</div>
+                    <div style="font-size: 13px; color: #888; margin-bottom: 0.75rem;">
+                        📅 {{ item.reminder }} • Last bought: {{ item.last_bought }} • Bought {{ item.times_bought }} times
+                    </div>
+                </div>
+                <div style="text-align: right; margin-left: 1.5rem;">
+                    <div style="font-size: 28px; font-weight: 700; color: #667eea; margin-bottom: 0.25rem;">₹{{ "%.0f"|format(item.amount) }}</div>
+                    <div style="font-size: 11px; color: #999;">Usually costs</div>
+                </div>
+            </div>
+            
+            <div style="background: #f8f9fa; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+                <div style="font-weight: 600; color: #333; font-size: 15px; margin-bottom: 0.75rem;">{{ item.prompt }}</div>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <button onclick="addToExpenses('{{ item.item }}', '{{ item.category }}', {{ item.amount }})" 
+                            style="flex: 1; min-width: 140px; padding: 0.75rem 1.25rem; background: #667eea; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.2s;">
+                        ✅ Yes, Add to Expenses
+                    </button>
+                    <button onclick="alreadyBought('{{ item.item }}', '{{ item.category }}', {{ item.amount }})" 
+                            style="flex: 1; min-width: 140px; padding: 0.75rem 1.25rem; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.2s;">
+                        ✓ Already Bought
+                    </button>
+                    <button onclick="notNow('{{ item.item }}')" 
+                            style="flex: 1; min-width: 140px; padding: 0.75rem 1.25rem; background: #f3f4f6; color: #666; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: all 0.2s;">
+                        ✕ Not Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if not item_suggestions and not error %}
+    <div style="text-align: center; padding: 3rem; background: #f8f9fa; border-radius: 12px;">
+        <p style="color: #666; margin-bottom: 1rem; font-size: 16px;">No buying reminders right now.</p>
+        <p style="color: #999; font-size: 14px;">Add more expenses to get personalized buying reminders!</p>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+function addToExpenses(item, category, amount) {
+    // Redirect to expense page with pre-filled data
+    const params = new URLSearchParams({
+        'item': item,
+        'category': category,
+        'amount': amount,
+        'from_suggestion': 'true'
+    });
+    window.location.href = `/expense?${params.toString()}`;
+}
+
+function alreadyBought(item, category, amount) {
+    // Add directly to expenses with today's date
+    if (confirm(`Add "${item}" to your expenses for today?`)) {
+        // Create a form and submit it
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/upload-invoice';
+        
+        const itemInput = document.createElement('input');
+        itemInput.type = 'hidden';
+        itemInput.name = 'item';
+        itemInput.value = item;
+        form.appendChild(itemInput);
+        
+        const categoryInput = document.createElement('input');
+        categoryInput.type = 'hidden';
+        categoryInput.name = 'category';
+        categoryInput.value = category;
+        form.appendChild(categoryInput);
+        
+        const amountInput = document.createElement('input');
+        amountInput.type = 'hidden';
+        amountInput.name = 'amount';
+        amountInput.value = amount;
+        form.appendChild(amountInput);
+        
+        const dateInput = document.createElement('input');
+        dateInput.type = 'hidden';
+        dateInput.name = 'date';
+        dateInput.value = new Date().toISOString().split('T')[0];
+        form.appendChild(dateInput);
+        
+        document.body.appendChild(form);
+        form.submit();
+    }
+}
+
+function notNow(item) {
+    // Hide the suggestion card
+    const cards = document.querySelectorAll('.suggestion-card');
+    cards.forEach(card => {
+        if (card.textContent.includes(item)) {
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(-10px)';
+            setTimeout(() => {
+                card.style.display = 'none';
+            }, 300);
+        }
+    });
+    
+    // Save discarded items to localStorage
+    let discarded = JSON.parse(localStorage.getItem('discarded_suggestions') || '[]');
+    if (!discarded.includes(item)) {
+        discarded.push(item);
+        localStorage.setItem('discarded_suggestions', JSON.stringify(discarded));
+    }
+}
+
+// Hide suggestions that were previously discarded
+document.addEventListener('DOMContentLoaded', function() {
+    const discarded = JSON.parse(localStorage.getItem('discarded_suggestions') || '[]');
+    const cards = document.querySelectorAll('.suggestion-card');
+    cards.forEach(card => {
+        discarded.forEach(item => {
+            if (card.textContent.includes(item)) {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+
+<style>
+.suggestion-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.suggestion-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+</style>
+{% endblock %}

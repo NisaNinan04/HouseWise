@@ -1,0 +1,766 @@
+{% extends "base.html" %}
+
+{% block title %}Import Gmail Orders - HouseWise{% endblock %}
+
+{% block content %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .main-content {
+        flex: 1;
+        margin-left: 250px;
+        padding: 32px 40px;
+        overflow-y: auto;
+        min-height: 100vh;
+        transition: all 0.3s ease;
+    }
+
+    .content-header {
+        margin-bottom: 32px;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-header h1 {
+        font-size: 32px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+    }
+
+    .content-header .text-muted {
+        color: #6b7280;
+        font-size: 16px;
+    }
+
+    .grid-container {
+        display: grid;
+        gap: 24px;
+    }
+
+    /* Enhanced Card Styling */
+    .card {
+        background: linear-gradient(145deg, #ffffff, #fafbfc);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(168, 85, 247, 0.02));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-color: #d1d5db;
+    }
+
+    .card:hover::before {
+        opacity: 1;
+    }
+
+    .card-icon {
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+    }
+
+    .card:hover .card-icon {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    .card-icon svg {
+        color: white;
+        width: 28px;
+        height: 28px;
+    }
+
+    .import-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .form-group label {
+        font-weight: 600;
+        color: #374151;
+        font-size: 14px;
+    }
+
+    .form-input-wrapper {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .form-input {
+        flex: 1;
+        padding: 12px 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+        background: #ffffff;
+        color: #1f2937;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.12);
+    }
+
+    .form-group small {
+        color: #6b7280;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .import-info {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.05));
+        padding: 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .import-info h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 12px;
+    }
+
+    .import-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .import-info li {
+        padding: 8px 0;
+        color: #6b7280;
+        font-size: 14px;
+        position: relative;
+        padding-left: 24px;
+    }
+
+    .import-info li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #8b5cf6;
+        font-weight: 600;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 14px 24px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        position: relative;
+        z-index: 1;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-primary:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    .btn-primary:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .btn-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-refresh {
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        min-width: 48px;
+        height: 48px;
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+    }
+
+    .btn-refresh:hover:not(:disabled) {
+        transform: translateY(-2px) rotate(180deg);
+        box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-refresh:active:not(:disabled) {
+        transform: translateY(0) rotate(360deg);
+    }
+
+    .btn-refresh:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .btn-refresh svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s;
+    }
+
+    .auth-note {
+        margin-top: 20px;
+        padding: 16px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+        border-radius: 12px;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+        position: relative;
+        z-index: 1;
+    }
+
+    .auth-note p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #6b7280;
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .auth-note svg {
+        color: #8b5cf6;
+        flex-shrink: 0;
+    }
+
+    /* Card Header */
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .card-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2937;
+        margin: 0;
+    }
+
+    .card-header-actions {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .btn-refresh-small {
+        background: linear-gradient(145deg, #ffffff, #fafbfc);
+        color: #374151;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 10px 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-refresh-small:hover:not(:disabled) {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+        border-color: #8b5cf6;
+        color: #8b5cf6;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(139, 92, 246, 0.15);
+    }
+
+    .btn-refresh-small:active:not(:disabled) {
+        transform: translateY(0);
+    }
+
+    .btn-refresh-small:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .btn-refresh-small svg {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s;
+    }
+
+    .btn-refresh-small:hover svg {
+        transform: rotate(180deg);
+    }
+
+    .view-all {
+        color: #8b5cf6;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 4px 0;
+    }
+
+    .view-all::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(135deg, #8b5cf6, #a855f7);
+        transition: width 0.3s ease;
+    }
+
+    .view-all:hover {
+        color: #7c3aed;
+    }
+
+    .view-all:hover::after {
+        width: 100%;
+    }
+
+    /* Table Styling */
+    .table-container {
+        overflow-x: auto;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        position: relative;
+        z-index: 1;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table thead {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+    }
+
+    .table th {
+        padding: 16px;
+        text-align: left;
+        font-weight: 600;
+        color: #374151;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(139, 92, 246, 0.1);
+    }
+
+    .table td {
+        padding: 16px;
+        border-bottom: 1px solid #f0f0f0;
+        color: #1f2937;
+        transition: all 0.2s ease;
+    }
+
+    .table-row {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .table-row:hover {
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(168, 85, 247, 0.05));
+        transform: translateX(4px);
+    }
+
+    .table-row:last-child td {
+        border-bottom: none;
+    }
+
+    .order-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-details strong {
+        color: #1f2937;
+        font-weight: 600;
+    }
+
+    .amount {
+        font-family: 'SF Mono', 'Monaco', 'Cascadia Code', monospace;
+        font-size: 15px;
+        font-weight: 600;
+        color: #ef4444;
+    }
+
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .badge-success {
+        background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+        color: #166534;
+    }
+
+    .badge svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    /* Empty State */
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(168, 85, 247, 0.03));
+        border-radius: 12px;
+        border: 2px dashed rgba(139, 92, 246, 0.2);
+        position: relative;
+        z-index: 1;
+    }
+
+    .empty-icon {
+        font-size: 64px;
+        margin-bottom: 16px;
+        opacity: 0.6;
+    }
+
+    .empty-state p {
+        font-size: 18px;
+        font-weight: 600;
+        color: #374151;
+        margin-bottom: 8px;
+    }
+
+    .empty-state small {
+        color: #6b7280;
+        font-size: 14px;
+    }
+
+    .loading-spinner {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.8s linear infinite;
+        margin-right: 8px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+        .main-content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        .grid-container {
+            gap: 16px;
+        }
+
+        .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .card-header-actions {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .table-container {
+            overflow-x: scroll;
+        }
+    }
+</style>
+
+<div class="main-content">
+    <div class="content-header">
+        <h1>Import Orders from Gmail</h1>
+        <p class="text-muted">Automatically import your online shopping expenses from Gmail</p>
+    </div>
+
+    <div class="grid-container">
+        <!-- Import Card -->
+        <div class="card import-card">
+            <div class="card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+            </div>
+            
+            <form method="POST" action="{{ url_for('gmail_orders') }}" class="import-form" id="importForm">
+                <div class="form-group">
+                    <label for="email">Gmail Address</label>
+                    <div class="form-input-wrapper">
+                        <input type="email" id="email" name="email" 
+                               value="{{ last_email if last_email else '' }}"
+                               placeholder="Enter your Gmail address"
+                               class="form-input" 
+                               required>
+                        <button type="button" class="btn-refresh" id="refreshBtn" title="Refresh and check for new orders">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="23 4 23 10 17 10"></polyline>
+                                <polyline points="1 20 1 14 7 14"></polyline>
+                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    {% if last_email %}
+                    <small>Last used: {{ last_email }} • Click refresh to check for new orders</small>
+                    {% else %}
+                    <small>Enter your email and click refresh to import orders</small>
+                    {% endif %}
+                </div>
+
+                <div class="import-info">
+                    <h4>What will be imported?</h4>
+                    <ul>
+                        <li>Order confirmation emails</li>
+                        <li>Purchase amounts and dates</li>
+                        <li>Order IDs for reference</li>
+                    </ul>
+                </div>
+
+                <button type="submit" class="btn-primary" id="submitBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                    <span id="submitText">Import Orders</span>
+                </button>
+            </form>
+
+            <div class="auth-note">
+                <p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                    </svg>
+                    You'll need to authorize access to your Gmail account on first use
+                </p>
+            </div>
+        </div>
+
+        <!-- Recent Imports -->
+        <div class="card recent-imports">
+            <div class="card-header">
+                <h2 class="card-title">Recent Gmail Imports</h2>
+                <div class="card-header-actions">
+                    <button type="button" class="btn-refresh-small" id="refreshListBtn" title="Refresh and check for new orders">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                        Refresh
+                    </button>
+                    <a href="{{ url_for('expense') }}" class="view-all">View All in Expenses →</a>
+                </div>
+            </div>
+            
+            {% if gmail_orders and gmail_orders|length > 0 %}
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Date</th>
+                                <th>Order ID</th>
+                                <th>Amount</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in gmail_orders %}
+                            <tr class="table-row">
+                                <td>{{ order.source }}</td>
+                                <td>
+                                    {% if order.date %}
+                                        {% if order.date is string %}
+                                            {{ order.date }}
+                                        {% else %}
+                                            {{ order.date.strftime('%B %d, %Y') }}
+                                        {% endif %}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="order-details">
+                                        <strong>{{ order.order_id }}</strong>
+                                    </div>
+                                </td>
+                                <td class="amount">₹{{ "%.2f"|format(order.amount) }}</td>
+                                <td>{{ order.category }}</td>
+                                <td>
+                                    <span class="badge badge-success">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                        </svg>
+                                        Imported
+                                    </span>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <div class="empty-icon">📩</div>
+                    <p>No orders imported yet</p>
+                    <small>Click "Import Orders" above to get started</small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('importForm').addEventListener('submit', function(e) {
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        
+        // Disable button and show loading
+        submitBtn.disabled = true;
+        submitText.innerHTML = '<span class="loading-spinner"></span>Importing...';
+        
+        // Form will submit normally
+    });
+
+    // Refresh button functionality
+    const refreshBtn = document.getElementById('refreshBtn');
+    const refreshListBtn = document.getElementById('refreshListBtn');
+    const emailInput = document.getElementById('email');
+    const importForm = document.getElementById('importForm');
+
+    function triggerRefresh() {
+        // Get email from input or use last email
+        const lastEmail = '{{ last_email if last_email else "" }}';
+        if (!emailInput.value && lastEmail) {
+            emailInput.value = lastEmail;
+        }
+        
+        // If still no email, prompt user
+        if (!emailInput.value) {
+            emailInput.focus();
+            alert('Please enter your Gmail address first');
+            return;
+        }
+        
+        // Make sure email field is not empty for form submission
+        if (!emailInput.value.trim()) {
+            emailInput.focus();
+            alert('Please enter a valid Gmail address');
+            return;
+        }
+
+        // Disable buttons and show loading
+        if (refreshBtn) {
+            refreshBtn.disabled = true;
+            refreshBtn.style.opacity = '0.6';
+        }
+        if (refreshListBtn) {
+            refreshListBtn.disabled = true;
+            refreshListBtn.style.opacity = '0.6';
+        }
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitText.innerHTML = '<span class="loading-spinner"></span>Refreshing...';
+        }
+        
+        // Submit the form
+        importForm.submit();
+    }
+
+    if (refreshBtn) {
+        refreshBtn.addEventListener('click', triggerRefresh);
+    }
+
+    if (refreshListBtn) {
+        refreshListBtn.addEventListener('click', triggerRefresh);
+    }
+</script>
+{% endblock %}

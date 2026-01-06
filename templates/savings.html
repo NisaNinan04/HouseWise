@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HouseWise | Savings Goals</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        /* CSS from your original savings.html is included here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Enhanced Sidebar */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+
+        .profile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .profile-pic {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateX(2px);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            font-size: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+        /* Enhanced Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            overflow-y: auto;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        .page-header {
+            margin-bottom: 30px;
+        }
+
+        .page-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .page-subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            animation: titleGlow 3s ease-in-out infinite;
+        } */
+
+        @keyframes titleGlow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.1); }
+        }
+
+        .intro-text {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Enhanced Existing Goals Section */
+        .existing-goals {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .existing-goals::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(168, 85, 247, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .existing-goals:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+        }
+
+        .existing-goals:hover::before {
+            opacity: 1;
+        }
+
+        .existing-goals h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .goal-progress {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            padding: 24px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.8));
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            position: relative;
+            overflow: hidden;
+            text-decoration: none; /* Make goals clickable like links */
+            color: inherit;
+        }
+
+        .goal-progress::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .goal-progress:hover::before {
+            left: 100%;
+        }
+
+        .goal-progress:hover {
+            transform: translateX(8px) translateY(-4px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .goal-info {
+            flex: 1;
+            margin-right: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .goal-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .goal-amounts {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 12px;
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .goal-deadline {
+            font-size: 13px;
+            color: #9ca3af;
+            font-weight: 500;
+        }
+
+        .goal-percentage {
+            text-align: center;
+            min-width: 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .goal-percentage div:first-child {
+            font-weight: 700;
+            font-size: 28px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 4px;
+        }
+
+        .goal-percentage div:last-child {
+            font-size: 12px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Enhanced Chart Container */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .chart-container:hover {
+            transform: scale(1.01);
+        }
+
+        .card {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(168, 85, 247, 0.02));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        /* Enhanced Goal Selection Cards */
+        .goal-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .goal-card {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+        }
+
+        .goal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(168, 85, 247, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .goal-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .goal-card:hover::before {
+            opacity: 1;
+        }
+
+        .goal-card.selected {
+            border-color: #8b5cf6;
+            background: linear-gradient(135deg, #f3f0ff, #e0e7ff);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 48px rgba(139, 92, 246, 0.3);
+        }
+
+        .goal-card.selected::before {
+            opacity: 1;
+        }
+
+        .goal-icon {
+            font-size: 64px;
+            margin-bottom: 24px;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .goal-card:hover .goal-icon {
+            transform: scale(1.1) rotate(5deg);
+            animation-duration: 1s;
+        }
+
+        .goal-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #333;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .goal-description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .goal-radio {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Enhanced Goal Details Form */
+        .goal-form {
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.1);
+            display: none;
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .goal-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.03), rgba(168, 85, 247, 0.03));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .goal-form.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .goal-form.active::before {
+            opacity: 1;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .form-label::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 0;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            border-radius: 2px;
+            transition: height 0.3s ease;
+        }
+
+        .form-group:hover .form-label::before {
+            height: 100%;
+        }
+
+        .form-group:hover .form-label {
+            color: #8b5cf6;
+            transform: translateX(12px);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1), 0 8px 25px rgba(139, 92, 246, 0.15);
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .form-input:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            background: white;
+            transform: translateY(-1px);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            border: none;
+            padding: 20px 32px;
+            border-radius: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(-2px);
+            transition: transform 0.1s ease;
+        }
+
+        /* Flash Messages */
+        .flash-message {
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .flash-message.error {
+            background-color: #fca5a5;
+            color: #7f1d1d;
+            border: 1px solid #f87171;
+        }
+
+        .flash-message.success {
+            background-color: #a7f3d0;
+            color: #065f46;
+            border: 1px solid #34d399;
+        }
+        
+        /* New Styles for Savings Page Layout */
+        .goals-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .invite-card {
+             background: linear-gradient(145deg, #ffffff, #fafbfc);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .invite-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .invite-item:last-child {
+            border-bottom: none;
+        }
+        
+        .invite-info {
+            flex-grow: 1;
+        }
+        
+        .invite-name {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .invite-meta {
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* Custom Purple Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(139, 92, 246, 0.1);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #7c3aed, #9333ea);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 15px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px 16px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .goal-selection {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            .goals-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="page-header">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                <div>
+                    <h1 class="page-title">Savings</h1>
+                    <p class="page-subtitle">Strategize your savings, allocate funds, and conquer your next milestone.</p>
+                </div>
+                </div>
+        </div>
+
+            <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %} -->
+
+            {% if my_goals or pending_invites %}
+            <div class="goals-layout">
+                <div class="existing-goals">
+                    <h2>🚀 Active Goals ({{ my_goals|length }})</h2>
+                    {% if my_goals %}
+                        {% for goal in my_goals %}
+                            <a href="{{ url_for('savings_goal_details', goal_id=goal._id) }}" class="goal-progress">
+                                <div class="goal-info">
+                                    <div class="goal-name">{{ goal.name }}</div>
+                                    <div class="goal-deadline">Type: {{ goal.type.split(':')[0] }} | Members: {{ goal.members|length }}</div>
+                                </div>
+                                <div class="goal-percentage" style="min-width: 100px;">
+                                    <div>View</div>
+                                    <div>Details</div>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    {% else %}
+                        <p style="padding-top: 5px; color: #999;">You haven't created or joined any savings goals yet.</p>
+                    {% endif %}
+                </div>
+
+                {% if pending_invites %}
+                <div class="invite-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 24px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                    <h2 style="margin-bottom: 20px; font-size: 22px;">✉️ Pending Invitations ({{ pending_invites|length }})</h2>
+                    <p style="margin-bottom: 20px; opacity: 0.9; font-size: 14px;">Accept invitations to join savings goals and track progress together!</p>
+                    {% for invite in pending_invites %}
+                    <div class="invite-item" style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); padding: 16px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+                        <div class="invite-info">
+                            <div class="invite-name" style="font-weight: 600; font-size: 16px; margin-bottom: 4px;">{{ invite.goal_name }}</div>
+                            <div class="invite-meta" style="font-size: 13px; opacity: 0.9;">Invited by {{ invite.sender_name }}</div>
+                        </div>
+                        <form method="POST" action="{{ url_for('accept_savings_invite', goal_id=invite.goal_id, invite_id=invite.invite_id) }}">
+                            <button type="submit" class="btn" style="background: white; color: #667eea; padding: 10px 24px; font-size: 14px; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; transition: all 0.3s;">Accept & Join</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">🎯 Start a New Savings Goal</h2>
+                </div>
+                <p class="intro-text" style="margin-bottom: 20px; text-align: left;">
+                    Select a category below to get started. You can choose to save solo, or invite friends to save together!
+                </p>
+                <div class="goal-selection" id="goal-selection">
+
+                    <div class="goal-card" data-category="Event">
+                        <input type="radio" name="goal_category" id="goal_event" class="goal-radio" value="Event">
+                        <label for="goal_event">
+                            <div class="goal-icon">🎉</div>
+                            <div class="goal-title">Events</div>
+                            <div class="goal-description">Wedding, Birthday, Retirement, Houseparty, etc.</div>
+                        </label>
+                    </div>
+
+                    <div class="goal-card" data-category="Downpayment">
+                        <input type="radio" name="goal_category" id="goal_downpayment" class="goal-radio" value="Downpayment">
+                        <label for="goal_downpayment">
+                            <div class="goal-icon">🏠</div>
+                            <div class="goal-title">Downpayments</div>
+                            <div class="goal-description">House, Vehicle, Education, etc.</div>
+                        </label>
+                    </div>
+
+                    <div class="goal-card" data-category="Vacation">
+                        <input type="radio" name="goal_category" id="goal_vacation" class="goal-radio" value="Vacation">
+                        <label for="goal_vacation">
+                            <div class="goal-icon">✈️</div>
+                            <div class="goal-title">Vacations</div>
+                            <div class="goal-description">Trips, Travel, Holiday funds.</div>
+                        </label>
+                    </div>
+
+                    <div class="goal-card" data-category="Gadgets">
+                        <input type="radio" name="goal_category" id="goal_gadgets" class="goal-radio" value="Gadgets">
+                        <label for="goal_gadgets">
+                            <div class="goal-icon">📱</div>
+                            <div class="goal-title">Gadgets</div>
+                            <div class="goal-description">New phone, laptop, gaming console, smart home tech.</div>
+                        </label>
+                    </div>
+
+                    <div class="goal-card" data-category="Education">
+                        <input type="radio" name="goal_category" id="goal_education" class="goal-radio" value="Education">
+                        <label for="goal_education">
+                            <div class="goal-icon">🎓</div>
+                            <div class="goal-title">Education</div>
+                            <div class="goal-description">Tuition fees, courses, books, professional certifications.</div>
+                        </label>
+                    </div>
+                    
+                    <div class="goal-card" data-category="Business">
+                        <input type="radio" name="goal_category" id="goal_business" class="goal-radio" value="Business">
+                        <label for="goal_business">
+                            <div class="goal-icon">💼</div>
+                            <div class="goal-title">Business</div>
+                            <div class="goal-description">Startup capital, equipment, advertising, software subscriptions.</div>
+                        </label>
+                    </div>
+                    
+                    <div class="goal-card" data-category="Emergency">
+                        <input type="radio" name="goal_category" id="goal_emergency" class="goal-radio" value="Emergency">
+                        <label for="goal_emergency">
+                            <div class="goal-icon">🚨</div>
+                            <div class="goal-title">Emergency Fund</div>
+                            <div class="goal-description">Safety net for unexpected expenses.</div>
+                        </label>
+                    </div>
+
+                    <div class="goal-card" data-category="Other">
+                        <input type="radio" name="goal_category" id="goal_other" class="goal-radio" value="Other">
+                        <label for="goal_other">
+                            <div class="goal-icon">📦</div>
+                            <div class="goal-title">Other</div>
+                            <div class="goal-description">Custom goals (gifts, charity, etc.)</div>
+                        </label>
+                    </div>
+
+                </div>
+
+                <form id="new-goal-form" class="goal-form" method="POST" action="{{ url_for('create_savings_goal') }}">
+                    <h2 class="card-title" style="margin-bottom: 20px;">Goal Details</h2>
+                    <input type="hidden" name="goal_type" id="goal_type_input" required>
+
+                    <div class="form-group">
+                        <label for="goal_name" class="form-label">Goal Name (e.g., 'Wedding Fund for Mark & Sarah')</label>
+                        <input type="text" id="goal_name" name="goal_name" class="form-input" required placeholder="Enter a descriptive name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specific_type" class="form-label">Specific Goal (e.g., 'Wedding', 'House', 'Japan Trip')</label>
+                        <input type="text" id="specific_type" name="specific_type" class="form-input" required placeholder="Enter the specific goal name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="invite_email" class="form-label">Invite a Friend (Optional) - Email</label>
+                        <input type="email" id="invite_email" name="invite_email" class="form-input" placeholder="friend@example.com">
+                        <small style="color: #999; display: block; margin-top: 5px;">You can invite more people later.</small>
+                    </div>
+
+                    <button type="submit" class="btn">Create Goal</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const goalCards = document.querySelectorAll('.goal-card');
+            const newGoalForm = document.getElementById('new-goal-form');
+            const goalTypeInput = document.getElementById('goal_type_input');
+            const specificTypeInput = document.getElementById('specific_type');
+
+            goalCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove 'selected' from all cards
+                    goalCards.forEach(c => c.classList.remove('selected'));
+                    
+                    // Select the current card
+                    this.classList.add('selected');
+
+                    // Extract the main category type
+                    const mainCategory = this.getAttribute('data-category');
+
+                    // Set the hidden input value (initial part)
+                    goalTypeInput.value = mainCategory + ":"; // Will be updated on submit
+
+                    // Show the form
+                    newGoalForm.classList.add('active');
+                    
+                    // Scroll to the form
+                    newGoalForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+            });
+            
+            // Update the hidden input on form submit to include the specific type
+            newGoalForm.addEventListener('submit', function(e) {
+                const mainCategory = goalTypeInput.value.split(':')[0];
+                const specificType = specificTypeInput.value.trim();
+                
+                if (mainCategory && specificType) {
+                    goalTypeInput.value = mainCategory + ":" + specificType;
+                } else {
+                    // Prevent submission if a goal card wasn't properly selected or specific type is empty
+                    e.preventDefault();
+                    alert("Please ensure you have selected a category and entered a specific goal name.");
+                }
+                
+                // Add loading state to button
+                const submitBtn = this.querySelector('.btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<span class="loading"></span> Creating...';
+                submitBtn.disabled = true;
+                
+                // Allow form submission to proceed
+            });
+        });
+    </script>
+</body>
+</html>

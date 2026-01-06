@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Receipt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.sidebar {
+    background-color: #1F2937;
+    width: 16rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100%;
+    color: #FFFFFF;
+}
+
+.main-content {
+    flex-grow: 1;
+    margin-left: 16rem;
+    padding: 2rem;
+    background-color: #FFFFFF;
+    color: #1F2937;
+}
+
+/* Navigation links */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: #9CA3AF;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #374151;
+}
+
+.nav-link.active {
+    background-color: #4B5563;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Profile section */
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    margin-bottom: 1.5rem; /* Add margin to separate from nav links */
+}
+
+.profile-pic {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #374151;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+}
+        .card {
+            background-color: #FFFFFF;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex">
+
+<aside class="sidebar hidden md:flex">
+    <div>
+        
+        <div class="flex items-center space-x-2 mb-8">
+            <a href="{{ url_for('expense') }}" class="text-3xl font-extrabold text-white">HouseWise</a>
+        </div>
+        
+        <div class="profile">
+            <div class="profile-pic">
+                {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+            </div>
+            <div>
+                <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+            </div>
+        </div>
+        <nav class="space-y-2">
+            <a href="{{ url_for('expense') }}" class="nav-link ">Expense</a>
+            <a href="{{ url_for('scan_receipt') }}" class="nav-link active">Scan Receipt</a>
+            <a href="{{ url_for('settings') }}" class="nav-link">Settings</a>
+        </nav>
+    </div>
+</aside>
+
+    <div class="main-content">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-gray-800">Scan Receipt</h1>
+            <p class="text-gray-500 mt-1">Upload a receipt to automatically extract transaction details.</p>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-3 mb-4 rounded-md text-center {% if category == 'error' %}bg-red-100 text-red-700{% elif category == 'success' %}bg-green-100 text-green-700{% else %}bg-blue-100 text-blue-700{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="card p-8">
+            <h2 class="text-2xl font-bold text-center mb-6">Upload Receipt</h2>
+            <form method="post" enctype="multipart/form-data" class="space-y-6">
+                <div class="relative border-2 border-gray-300 border-dashed rounded-lg p-12 text-center hover:border-blue-500 transition-colors cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v8" />
+                    </svg>
+                    <p class="mt-2 text-gray-600">Drag & drop your receipt here, or click to browse.</p>
+                    <input type="file" name="receipt_file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".png,.jpg,.jpeg,.pdf">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-md shadow-lg hover:bg-blue-700 transition-colors">
+                    Scan and Extract
+                </button>
+            </form>
+
+            {% if parsed_info and parsed_info.total_amount %}
+                <div class="mt-8">
+                    <h3 class="text-xl font-bold mb-4 text-center">Extracted Information</h3>
+                    <div class="bg-gray-100 p-6 rounded-xl border border-gray-200 shadow-inner space-y-3">
+                        <p><strong class="font-semibold text-gray-700">Company:</strong> {{ parsed_info.company_name }}</p>
+                        <p><strong class="font-semibold text-gray-700">Date:</strong> {{ parsed_info.date }}</p>
+                        <p><strong class="font-semibold text-gray-700">Total Amount:</strong> {{ parsed_info.total_amount|currency_format }}</p>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="text-lg font-semibold mb-2">Raw Extracted Text:</h4>
+                        <pre class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm whitespace-pre-wrap">{{ parsed_info.raw_text }}</pre>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

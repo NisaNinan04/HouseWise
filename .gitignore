@@ -1,0 +1,33 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# OAuth credentials and tokens (DO NOT COMMIT)
+credentials.json
+token*.json
+token_*.json
+
+# Database exports (uncomment to ignore, or keep to share data)
+# db_export/
+
+# OS files
+.DS_Store
+Thumbs.db
+

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "690cd7f2083679c884184cdc",
+    "session_id": "b4561e49-c2c5-4998-beca-51ab36237b69",
+    "expires_at": "2025-11-07T17:16:34.025000",
+    "login_time": "2025-11-06T17:16:34.025000",
+    "user_email": "s@gmail.com",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_name": "s"
+  },
+  {
+    "_id": "690ce3c3083679c8841863c4",
+    "session_id": "2b8da06c-66ab-46da-9276-22e0ce4125a7",
+    "expires_at": "2025-11-07T18:06:59.328000",
+    "login_time": "2025-11-06T18:06:59.328000",
+    "user_email": "a@gmail.com",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_name": "abc"
+  },
+  {
+    "_id": "690ce68e083679c8841868aa",
+    "session_id": "78cd14db-f4d3-4fdd-996a-edae8d014f2b",
+    "expires_at": "2025-11-07T18:18:54.108000",
+    "login_time": "2025-11-06T18:18:54.108000",
+    "user_email": "s@gmail.com",
+    "user_id": "690cd57384454e60cb8404ad",
+    "user_name": "s"
+  },
+  {
+    "_id": "690ce72a083679c8841869c9",
+    "session_id": "f7aae96b-adf9-4f9e-bfe4-40bc222a6cfe",
+    "expires_at": "2025-11-07T18:21:30.493000",
+    "login_time": "2025-11-06T18:21:30.493000",
+    "user_email": "a@gmail.com",
+    "user_id": "690cd57384454e60cb8404ac",
+    "user_name": "abc"
+  }
+]

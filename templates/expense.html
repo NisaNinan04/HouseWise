@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spending expense</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(145deg, #ffffff, #fafbfc);
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(139, 92, 246, 0.1);
+            position: fixed;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 2px solid rgba(139, 92, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 16px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(168, 85, 247, 0.08));
+            border-radius: 12px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-bottom: 8px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #666;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover:not(.active) {
+            background: rgba(139, 92, 246, 0.08);
+            color: #374151;
+            transform: translateX(4px);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            transform: translateX(2px);
+        }
+
+        .nav-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover .nav-icon {
+            transform: scale(1.1);
+        }
+
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 30px;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+
+        /* General Card and Grid Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Table Styling */
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-header th {
+            background: #e9ecef;
+            color: #555;
+            padding: 12px 16px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        .table-body-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .table-body-scroll table {
+            width: 100%;
+        }
+
+        .table-row {
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.2s;
+        }
+
+        .table-row:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table-row td {
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+
+        /* Form and button styling */
+        .form-input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+            
+        .form-group select /* <-- ADD THIS LINE */
+        { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+        }
+
+        /* Also ensure your existing label style is generalized: */
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+            font-weight: 500; 
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            left: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: #e9ecef;
+            color: #333;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ccc;
+        }
+
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+        }
+        
+        .modal-container {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 28rem;
+            color: #1F2937;
+        }
+        
+        /* Custom Purple Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 15px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-container">
+            <h2 class="card-title" style="text-align: center; margin-bottom: 1.5rem;">Edit Purchase</h2>
+            <form id="edit-form" method="POST" action="">
+                <div style="margin-bottom: 1rem;">
+                    <label for="modal-item" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Item Name</label>
+                    <input type="text" id="modal-item" name="item" class="form-input" required>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="modal-amount" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Amount (₹)</label>
+                    <input type="number" step="0.01" id="modal-amount" name="amount" class="form-input" required>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="modal-date" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Date</label>
+                    <input type="date" id="modal-date" name="date" class="form-input" required>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <label for="modal-category" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Category</label>
+                    <select id="modal-category" name="category" class="form-input">
+                        <option value="Groceries">Groceries</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Toiletries">Toiletries</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Stationery">Stationery</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Food & Dining">Food & Dining</option>
+                        <option value="Transport">Transport</option>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                        <option value="Receipt">Receipt</option>
+                    </select>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <button type="submit" class="btn submit-btn">Update Purchase</button>
+                    <button type="button" id="close-modal-btn" class="btn btn-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <div>
+                <div class="logo">HouseWise</div>
+                
+                <div class="profile">
+                    <div class="profile-pic">
+                        {{ session.get('user_name', 'User')|first|upper }}{{ session.get('user_name', 'User').split(' ')[-1]|first|upper }}
+                    </div>
+                    <div>
+                        <div style="font-weight: 500;">{{ session.get('user_name', 'User') }}</div>
+                    </div>
+                </div>
+
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="{{ 'nav-link active' if request.endpoint=='dashboard' else 'nav-link' }}"><span class="nav-icon">📊</span> Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('income') }}" class="{{ 'nav-link active' if request.endpoint=='income' else 'nav-link' }}"><span class="nav-icon">💰</span> Income</a></li>
+                    <li class="nav-item"><a href="{{ url_for('expense') }}" class="{{ 'nav-link active' if request.endpoint=='expense' else 'nav-link' }}"><span class="nav-icon">💳</span> Expense</a></li>
+                    <li class="nav-item"><a href="{{ url_for('bills') }}" class="{{ 'nav-link active' if request.endpoint=='bills' else 'nav-link' }}"><span class="nav-icon">📅</span> Bills</a></li>
+                    <li class="nav-item"><a href="{{ url_for('medical') }}" class="{{ 'nav-link active' if request.endpoint=='medical' else 'nav-link' }}"><span class="nav-icon">💊</span> Medical</a></li>
+                    <li class="nav-item"><a href="{{ url_for('savings') }}" class="{{ 'nav-link active' if request.endpoint=='savings' or 'savings' in request.endpoint else 'nav-link' }}"><span class="nav-icon">💎</span> Savings</a></li>
+                    <li class="nav-item"><a href="{{ url_for('groups') }}" class="{{ 'nav-link active' if request.endpoint=='groups' or 'group' in request.endpoint else 'nav-link' }}"><span class="nav-icon">👥</span> Groups</a></li>
+                    <li class="nav-item"><a href="{{ url_for('gmail_orders') }}" class="{{ 'nav-link active' if request.endpoint=='gmail_orders' else 'nav-link' }}"><span class="nav-icon">📧</span> Import Orders</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.predictions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.predictions' else 'nav-link' }}"><span class="nav-icon">🔮</span> Predictions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('ml.suggestions') }}" class="{{ 'nav-link active' if request.endpoint=='ml.suggestions' else 'nav-link' }}"><span class="nav-icon">🛒</span> Suggestions</a></li>
+                    <li class="nav-item"><a href="{{ url_for('settings') }}" class="{{ 'nav-link active' if request.endpoint=='settings' else 'nav-link' }}"><span class="nav-icon">⚙️</span> Settings</a></li>
+                </ul>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('logout') }}" class="nav-link">
+                        <span class="nav-icon">🚪</span>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="main-content">
+            <header style="margin-bottom: 30px;">
+                <h1 style="font-size: 28px; font-weight: 700; color: #333;">Expense</h1>
+                <p style="color: #666; font-size: 14px; margin-top: 4px;">Your financial overview at a glance.</p>
+            </header>
+
+            <div class="card-grid">
+                <div class="card" style="text-align: center;">
+                    <h2 class="card-title" style="margin-bottom: 20px;">Upload a File</h2>
+                    <div style="display: flex; flex-direction: column; align-items: center; padding: 20px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="height: 64px; width: 64px; color: #ccc; margin-bottom: 20px;" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                        </svg>
+                    
+                        <p style="color: #666; margin-bottom: 10px; font-size: 14px;">Drag & drop or click to browse.</p>
+                    
+                        <form action="{{ url_for('upload_invoice') }}" method="post" enctype="multipart/form-data" style="width: 100%;">
+                            <label for="file-upload-combined" class="btn btn-secondary" id="browse-btn" style="width: 100%; margin-bottom: 10px;">
+                                Browse Files
+                            </label>
+                        
+                            <input id="file-upload-combined" type="file" name="invoice_file" style="display: none;" accept=".png,.jpg,.jpeg,.pdf">
+                        
+                            <!-- File name display area -->
+                            <p id="file-name-display" style="font-size: 14px; color: #28a745; font-weight: 500; margin-bottom: 16px;"></p>
+                        
+                            <button type="submit" class="btn submit-btn" style="width: 100%;">
+                                Upload & Process
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="card-title" style="text-align: center; margin-bottom: 20px;">Manual Entry</h2>
+                    {% if from_suggestion %}
+                    <div style="background: #e0f2fe; border: 1px solid #0ea5e9; border-radius: 8px; padding: 0.75rem; margin-bottom: 1rem; font-size: 14px; color: #0369a1;">
+                        ✓ Pre-filled from buying reminder
+                    </div>
+                    {% endif %}
+                    <form action="{{ url_for('upload_invoice') }}" method="post" style="display: flex; flex-direction: column; gap: 16px;">
+                        <div>
+                            <label for="date-combined" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Date</label>
+                            <input type="date" name="date" id="date-combined" value="{{ date.today().strftime('%Y-%m-%d') }}" required class="form-input">
+                        </div>
+                        <div>
+                            <label for="item-combined" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Item</label>
+                            <input type="text" name="item" id="item-combined" value="{{ prefilled_item }}" required class="form-input" onblur="autoDetectCategory()" oninput="autoDetectCategory()">
+                        </div>
+                        <div>
+                            <label for="amount-combined" style="display: block; color: #666; font-weight: 500; font-size: 14px; margin-bottom: 4px;">Amount (₹)</label>
+                            <input type="number" name="amount" id="amount-combined" step="0.01" value="{{ prefilled_amount }}" required class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="category-combined">Category</label>
+                            <select name="category" id="category-combined" required>
+                                <option value="" disabled {% if not prefilled_category %}selected{% endif %}>Select a category</option>
+                                <option value="Groceries" {% if prefilled_category == 'Groceries' %}selected{% endif %}>Groceries</option>
+            <option value="Food & Dining" {% if prefilled_category == 'Food & Dining' %}selected{% endif %}>Food & Dining</option>
+            <option value="Transport" {% if prefilled_category == 'Transport' %}selected{% endif %}>Transport</option>
+            <option value="Shopping" {% if prefilled_category == 'Shopping' %}selected{% endif %}>Shopping</option>
+            <option value="Bills & Utilities" {% if prefilled_category == 'Bills & Utilities' %}selected{% endif %}>Bills & Utilities</option>
+            <option value="Entertainment" {% if prefilled_category == 'Entertainment' %}selected{% endif %}>Entertainment</option>
+            <option value="Healthcare" {% if prefilled_category == 'Healthcare' %}selected{% endif %}>Healthcare</option>
+            <option value="Education" {% if prefilled_category == 'Education' %}selected{% endif %}>Education</option>
+            <option value="Personal Care" {% if prefilled_category == 'Personal Care' %}selected{% endif %}>Personal Care</option>
+            <option value="Travel" {% if prefilled_category == 'Travel' %}selected{% endif %}>Travel</option>
+            <option value="Investments" {% if prefilled_category == 'Investments' %}selected{% endif %}>Investments</option>
+            <option value="Others" {% if prefilled_category == 'Others' or not prefilled_category %}selected{% endif %}>Others</option>
+                                <option value="Transport" {% if prefilled_category == 'Transport' %}selected{% endif %}>Transport</option>
+                                <option value="Medicine" {% if prefilled_category == 'Medicine' %}selected{% endif %}>Medicine</option>
+                                <option value="Stationery" {% if prefilled_category == 'Stationery' %}selected{% endif %}>Stationery</option>
+                                <option value="Bills" {% if prefilled_category == 'Bills' %}selected{% endif %}>Bills</option>
+                                <option value="Food & Dining" {% if prefilled_category == 'Food & Dining' %}selected{% endif %}>Food & Dining</option>
+                                <option value="Housing" {% if prefilled_category == 'Housing' %}selected{% endif %}>Housing (Rent/Mortgage)</option>
+                                <option value="Shopping" {% if prefilled_category == 'Shopping' %}selected{% endif %}>Shopping (Clothes, Personal Items)</option>
+                                <option value="Entertainment" {% if prefilled_category == 'Entertainment' %}selected{% endif %}>Entertainment</option>
+                                <option value="Travel" {% if prefilled_category == 'Travel' %}selected{% endif %}>Travel & Vacation</option>
+                                <option value="Education" {% if prefilled_category == 'Education' %}selected{% endif %}>Education</option>
+                                <option value="Debt" {% if prefilled_category == 'Debt' %}selected{% endif %}>Debt & Loan Payments</option>
+                                <option value="Receipt" {% if prefilled_category == 'Receipt' %}selected{% endif %}>Receipt</option>
+                                <option value="Miscellaneous" {% if prefilled_category == 'Miscellaneous' %}selected{% endif %}>Miscellaneous</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Add Manually</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card" style="grid-column: 1 / -1;">
+                    <div class="card-header">
+                        <h2 class="card-title">Expense Records</h2>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead class="table-header">
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Item</th>
+                                    <th>Category</th>
+                                    <th style="text-align: right;">Amount</th>
+                                    <th style="text-align: center;">Actions</th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <div class="table-body-scroll">
+                            <table>
+                                <tbody class="text-gray-700 text-sm font-light">
+                                    {% for purchase in purchases %}
+                                    <tr class="table-row">
+                                        <td>{{ purchase.date }}</td>
+                                        <td>{{ purchase.item }}</td>
+                                        <td>{{ purchase.category }}</td>
+                                        <td style="text-align: right;">{{ purchase.amount | currency_format }}</td>
+                                        <td style="text-align: center;">
+                                            <div style="display: flex; justify-content: center; gap: 8px;">
+                                                <button onclick="openEditModal('{{ purchase.id }}')" class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px; font-weight: 600;">Edit</button>
+                                                <form method="POST" action="{{ url_for('delete_purchase', purchase_id=purchase.id) }}">
+                                                    <button type="submit" class="btn btn-secondary" style="padding: 4px 8px; font-size: 12px; font-weight: 600;">Delete</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Total Spent</h2>
+                    </div>
+                    <p style="font-size: 28px; font-weight: 700; margin-top: 8px; color: #ef4444;">{{ total_spent | currency_format }}</p>
+                    {% if alert %}
+                    <p style="margin-top: 8px; color: #ef4444; font-size: 14px; font-weight: 500;">Spending limit exceeded.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script id="purchases-data" type="application/json">
+        {{ purchases | tojson }}
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const purchases = JSON.parse(document.getElementById('purchases-data').textContent);
+
+            // Modal Logic
+            const modal = document.getElementById('edit-modal');
+            const closeBtn = document.getElementById('close-modal-btn');
+            const editForm = document.getElementById('edit-form');
+            const modalItemInput = document.getElementById('modal-item');
+            const modalAmountInput = document.getElementById('modal-amount');
+            const modalDateInput = document.getElementById('modal-date');
+            const modalCategorySelect = document.getElementById('modal-category');
+
+            window.openEditModal = function(id) {
+                const purchase = purchases.find(p => p.id === id);
+                if (!purchase) return;
+                modalItemInput.value = purchase.item;
+                modalAmountInput.value = purchase.amount;
+                modalDateInput.value = purchase.date || new Date().toISOString().split('T')[0];
+                modalCategorySelect.value = purchase.category;
+                editForm.action = `/edit_purchase/${id}`;
+                modal.style.display = 'flex';
+            };
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) modal.style.display = 'none';
+            });
+        });
+
+        // Handle first file input
+        const fileInput = document.getElementById('file-upload-combined');
+        const fileNameDisplay = document.getElementById('file-name-display');
+        const browseBtn = document.getElementById('browse-btn');
+
+        // Handle second file input (if exists)
+        const fileInput2 = document.getElementById('file-upload-combined-2');
+        const fileNameDisplay2 = document.getElementById('file-name-display-2');
+        const browseBtn2 = document.getElementById('browse-btn-2');
+
+        function handleFileSelection(input, display, btn) {
+            if (!input) return;
+            
+            input.addEventListener('change', function() {
+                if (input.files.length > 0) {
+                    const fileName = input.files[0].name;
+                    if (display) {
+                        display.textContent = "✓ Selected: " + fileName;
+                        display.style.color = "#28a745";
+                    }
+                    if (btn) {
+                        btn.textContent = "Change File";
+                        btn.style.backgroundColor = "#28a745";
+                        btn.style.borderColor = "#28a745";
+                    }
+            } else {
+                    if (display) {
+                        display.textContent = "";
+                    }
+                    if (btn) {
+                        btn.textContent = "Browse Files";
+                        btn.style.backgroundColor = "";
+                        btn.style.borderColor = "";
+                    }
+            }
+        });
+
+        // Make clicking the label trigger file dialog
+            if (btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    input.click();
+                });
+            }
+        }
+
+        // Initialize both file inputs
+        handleFileSelection(fileInput, fileNameDisplay, browseBtn);
+        handleFileSelection(fileInput2, fileNameDisplay2, browseBtn2);
+    </script>
+    
+    <script>
+        // Auto-detect category from item name
+        function autoDetectCategory() {
+            const itemInput = document.getElementById('item-combined');
+            const categorySelect = document.getElementById('category-combined');
+            
+            if (!itemInput || !categorySelect) {
+                console.log('Elements not found');
+                return;
+            }
+            
+            const itemName = itemInput.value.trim().toLowerCase();
+            if (!itemName) {
+                console.log('Item name is empty');
+                return;
+            }
+            
+            // Always auto-detect when user is typing (allow real-time updates)
+            // Only skip if user manually selected a category (tracked via data attribute)
+            const currentCategory = categorySelect.value;
+            const wasManuallySelected = categorySelect.dataset.manualSelection === 'true';
+            
+            // If user manually selected a category, don't override it
+            if (wasManuallySelected && currentCategory && currentCategory !== 'Others' && currentCategory !== '' && currentCategory !== 'Select a category') {
+                console.log('Category manually selected, not overriding:', currentCategory);
+                return;
+            }
+            
+            // Category keyword mapping (comprehensive list matching backend)
+            const categoryKeywords = {
+                'Groceries': ['grocery', 'supermarket', 'vegetable', 'fruit', 'milk', 'bread', 'rice', 'wheat', 'dal', 'pulses', 'spices', 'oil', 'ghee', 'butter', 'cheese', 'egg', 'chicken', 'meat', 'fish', 'snacks', 'biscuit', 'chips', 'namkeen', 'bigbasket', 'dmart', 'grocer'],
+                'Food & Dining': ['restaurant', 'cafe', 'dining', 'food', 'pizza', 'burger', 'coffee', 'tea', 'breakfast', 'lunch', 'dinner', 'hotel', 'zomato', 'swiggy', 'uber eats', 'ubereats', 'foodpanda', 'dominos', 'kfc', 'mcdonald', 'mcdonalds'],
+                'Transport': ['uber', 'ola', 'taxi', 'cab', 'auto', 'rickshaw', 'metro', 'bus', 'train', 'flight', 'airport', 'petrol', 'diesel', 'fuel', 'gas', 'parking', 'toll', 'transport', 'rapido'],
+                'Shopping': ['amazon', 'flipkart', 'myntra', 'shopping', 'clothes', 'dress', 'shirt', 'pant', 'shoes', 'bag', 'watch', 'jewelry', 'electronics', 'mobile', 'phone', 'laptop', 'headphone', 'speaker'],
+                'Bills & Utilities': ['electricity', 'water', 'internet', 'wifi', 'broadband', 'phone bill', 'mobile bill', 'landline', 'utility', 'bill', 'payment', 'recharge', 'prepaid', 'postpaid', 'water bill'],
+                'Entertainment': ['movie', 'cinema', 'theater', 'netflix', 'prime', 'hotstar', 'spotify', 'youtube', 'music', 'game', 'gaming', 'entertainment', 'party', 'event', 'concert'],
+                'Healthcare': ['medicine', 'pharmacy', 'medical', 'doctor', 'hospital', 'clinic', 'health', 'tablet', 'syrup', 'injection', 'test', 'lab', 'diagnostic', 'apollo', 'fortis'],
+                'Education': ['school', 'college', 'university', 'tuition', 'course', 'book', 'stationery', 'pen', 'pencil', 'notebook', 'education', 'fee', 'exam'],
+                'Personal Care': ['salon', 'spa', 'beauty', 'cosmetic', 'shampoo', 'soap', 'toothpaste', 'cream', 'lotion', 'parlor', 'grooming', 'haircut'],
+                'Travel': ['travel', 'trip', 'vacation', 'holiday', 'hotel', 'booking', 'airbnb', 'makemytrip', 'goibibo', 'yatra'],
+                'Investments': ['investment', 'mutual fund', 'mutual', 'mf', 'stocks', 'sip', 'fd', 'rd', 'savings', 'equity', 'bond', 'nifty', 'zerodha'],
+                'Housing': ['rent', 'landlord', 'housing', 'mortgage']
+            };
+            
+            // Find matching category (check in order, first match wins)
+            let matched = false;
+            for (const [category, keywords] of Object.entries(categoryKeywords)) {
+                for (const keyword of keywords) {
+                    // Check if keyword is in item name (case-insensitive substring match)
+                    if (itemName.includes(keyword.toLowerCase())) {
+                        // Verify the category option exists in the dropdown
+                        const optionExists = Array.from(categorySelect.options).some(opt => opt.value === category);
+                        if (optionExists) {
+                            categorySelect.value = category;
+                            // Mark as auto-selected (not manual)
+                            categorySelect.dataset.manualSelection = 'false';
+                            // Trigger change event to ensure UI updates
+                            categorySelect.dispatchEvent(new Event('change', { bubbles: true }));
+                            // Visual feedback
+                            categorySelect.style.background = '#e0f2fe';
+                            setTimeout(() => {
+                                categorySelect.style.background = '';
+                            }, 2000);
+                            console.log('✅ Auto-detected category:', category, 'for item:', itemName, 'matched keyword:', keyword);
+                            matched = true;
+                            return;
+                        } else {
+                            console.log('⚠️ Category option not found in dropdown:', category);
+                        }
+                    }
+                }
+            }
+            
+            // If no match found, set to Others (always update when typing)
+            if (!matched) {
+                categorySelect.value = 'Others';
+                categorySelect.dataset.manualSelection = 'false';
+                categorySelect.dispatchEvent(new Event('change', { bubbles: true }));
+                console.log('❌ No category match found for:', itemName, '- set to Others');
+            }
+        }
+        
+        // Track manual category selection to prevent auto-override
+        document.addEventListener('DOMContentLoaded', function() {
+            const categorySelect = document.getElementById('category-combined');
+            if (categorySelect) {
+                // Track when user manually selects from dropdown
+                categorySelect.addEventListener('mousedown', function() {
+                    // Mark that user is about to manually select
+                    this.dataset.manualSelection = 'pending';
+                });
+                
+                categorySelect.addEventListener('change', function() {
+                    // If manual selection was pending, mark it as manual
+                    if (this.dataset.manualSelection === 'pending') {
+                        this.dataset.manualSelection = 'true';
+                        console.log('Manual category selection:', this.value);
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
